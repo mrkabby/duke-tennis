@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom"; // For navigation
 import tennisPlayer from "../images/DukeTennis.jpg"; // Replace with actual path to your image
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import eventImage1 from "../images/DukeTennis.jpg";
+import eventImage2 from "../images/fei-chao-zWhd4tIe_z4-unsplash.jpg"; // Replace with actual event image paths
+import eventImage3 from "../images/fei-chao-y-ahbHZbs7Y-unsplash.jpg";
 
 function About() {
   const navigate = useNavigate();
@@ -77,17 +80,17 @@ function About() {
         {/* Regions Section */}
         <div className="py-12 px-6 md:px-20 bg-gray-50">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-            Available in 6 Regions
+            Available in 6 Regions of Ghana
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Region Card */}
             {[
-              "California",
-              "Texas",
-              "Florida",
-              "New York",
-              "Washington",
-              "Nevada",
+              "Greater Accra",
+              "Ashanti",
+              "Western",
+              "Northern",
+              "Eastern",
+              "Central",
             ].map((region, index) => (
               <div
                 key={index}
@@ -95,11 +98,43 @@ function About() {
               >
                 <h3 className="text-xl font-bold text-green-600">{region}</h3>
                 <p className="mt-2 text-gray-600">
-                  Join our tennis programs in {region} and experience world-class
-                  facilities.
+                  Join our tennis programs in {region} and experience
+                  world-class facilities.
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Portfolio of Events Section */}
+        <div className="py-10 px-6 md:px-20 bg-green-100 text-center">
+          <h2 className="text-3xl font-bold text-green-600">
+            Portfolio of Events
+          </h2>
+          <p className="mt-4 text-gray-600">
+            Discover our exciting events and tournaments across regions.
+          </p>
+          <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Event Cards */}
+            {[eventImage1, eventImage2, eventImage3, eventImage1].map(
+              (image, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-lg shadow-lg"
+                >
+                  <img
+                    src={image}
+                    alt={`Event ${index + 1}`}
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-white font-bold text-lg">
+                      Event {index + 1}
+                    </p>
+                  </div>
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

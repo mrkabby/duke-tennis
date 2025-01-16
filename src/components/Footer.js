@@ -22,7 +22,7 @@ function Footer() {
         <p className="mb-2">© {new Date().getFullYear()} Duke Tennis. All rights reserved.</p>
         <p>
           <FaPhoneAlt className="inline mr-2 text-yellow-400" />
-          <span>Call us: +1 (123) 456-7890</span>
+          <span>Call us:(+233) 55 8315717</span>
         </p>
       </div>
     </footer>

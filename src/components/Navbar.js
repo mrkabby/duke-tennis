@@ -31,7 +31,7 @@ function Navbar() {
           <Link to="/" className="hover:underline py-2 md:py-0">Home</Link>
           <Link to="/about" className="hover:underline py-2 md:py-0">About</Link>
           <Link to="/services" className="hover:underline py-2 md:py-0">Services</Link>
-          <Link to="/programs" className="hover:underline py-2 md:py-0">Programs</Link>
+       
           <Link to="/booking" className="hover:underline py-2 md:py-0">Booking</Link>
           
           <Link to="/resources" className="hover:underline py-2 md:py-0">Resources</Link>

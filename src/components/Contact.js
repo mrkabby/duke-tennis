@@ -19,14 +19,14 @@ function Contact() {
         <div className="w-full sm:w-1/2 md:w-1/4">
           <FaMapMarkerAlt className="text-green-600 text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Location</h3>
-          <p>123 Tennis Court, Sports City, Country</p>
+          <p>Rolider sports Complex, 9 Pacific Street, Shiashie-Accra</p>
         </div>
 
         {/* Phone */}
         <div className="w-full sm:w-1/2 md:w-1/4">
           <FaPhoneAlt className="text-green-600 text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Phone</h3>
-          <p>+1 (123) 456-7890</p>
+          <p>(+233) 55 8315717</p>
         </div>
 
         {/* Email */}
@@ -83,8 +83,7 @@ function Contact() {
           {/* Replace this div with an embedded map iframe if needed */}
           <iframe
             className="w-full h-full rounded-lg"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509819!2d144.95373531531684!3d-37.81627917975153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f7f1b1a3%3A0x506f0b72d5248a0!2zTWVsYm91cm5lIFZJQywgQXVzdHJhbGlh!5e0!3m2!1sen!2sgh!4v1636707375902!5m2!1sen!2sgh"
-            allowFullScreen=""
+            src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2721.78289108539!2d-0.18759793187295273!3d5.625058638853815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0xfdf9b891566b4b7%3A0xf11e6d745f3394e5!2sJRG7%2B2W%20ROLIDER%20PROPERTY%20-%20SHIASHIE%2C%20Accra!3m2!1d5.625048!2d-0.18518669999999998!5e0!3m2!1sen!2sgh!4v1736990581842!5m2!1sen!2sgh" 
             loading="lazy"
             title="Location Map"
           ></iframe>
