@@ -21,7 +21,7 @@ function About() {
             <img
               src={tennisPlayer}
               alt="Tennis Player"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover py-24"
             />
           </div>
 

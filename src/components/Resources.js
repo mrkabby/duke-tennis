@@ -62,7 +62,7 @@ function Resources() {
           </div>
 
           {/* Image Section */}
-          <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-10">
+          <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-10 py-24">
             <img
               src={tennisImage}
               alt="Tennis Event"

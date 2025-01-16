@@ -9,7 +9,7 @@ function Contact() {
     <Navbar />
     <div className="text-gray-700">
       {/* Header Section */}
-      <div className="text-center py-10 px-4">
+      <div className="text-center py-24 px-4">
         <h1 className="text-4xl font-bold text-green-600">CONTACT US</h1>
       </div>
 

@@ -5,12 +5,10 @@ import About from './components/About';
 import Services from './components/Services';
 
 import Booking from './components/Booking';
-import Testimonials from './components/Testimonials';
+
 import Resources from './components/Resources';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
-import FAQ from './components/FAQ';
-import Blog from './components/Blog';
 
 function App() {
   return (
@@ -22,12 +20,12 @@ function App() {
           <Route path="/services" element={<Services />} />
          
           <Route path="/booking" element={<Booking />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          
           <Route path="/resources" element={<Resources />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/blog" element={<Blog />} />
+          
+          
         </Routes>
       </div>
     </Router>

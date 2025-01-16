@@ -66,7 +66,7 @@ const BookingPage = () => {
       <div className="bg-gray-50 text-gray-800 min-h-screen">
         {/* Header Section */}
         <header
-          className="relative bg-cover bg-center text-white text-center py-16 px-6"
+          className="relative bg-cover bg-center text-white text-center py-24 px-6"
           style={{
             backgroundImage:
               "url('https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D')",

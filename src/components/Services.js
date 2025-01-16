@@ -14,7 +14,7 @@ function Services() {
       <Navbar />
       <div className="text-gray-700">
         {/* Header Section */}
-        <div className="text-center py-10">
+        <div className="text-center py-24">
           <h1 className="text-4xl font-bold text-green-600">SERVICES</h1>
           <p className="mt-2 text-xl font-semibold text-blue-900">
             High-quality tennis coaching tailored for everyone
