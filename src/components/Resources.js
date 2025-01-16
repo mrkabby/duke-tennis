@@ -28,7 +28,7 @@ function Resources() {
       <Navbar />
       <div className="bg-gray-50 text-gray-800">
         {/* Introduction Section */}
-        <div className="flex flex-col md:flex-row items-center md:justify-between px-6 md:px-20 py-10 md:py-20">
+        <div className="flex flex-col md:flex-row items-center md:justify-between px-6 md:px-20 py-24 md:py-20">
           {/* Text Section */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-2xl font-bold text-green-600">EXPLORE OUR</h2>

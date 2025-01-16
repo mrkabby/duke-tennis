@@ -27,7 +27,7 @@ const Gallery = () => {
       <Navbar />
       <div className="bg-gray-50 min-h-screen text-gray-700">
         {/* Header */}
-        <div className="bg-green-500 text-white text-center py-10">
+        <div className="bg-green-500 text-white text-center py-24">
           <h1 className="text-4xl font-bold">Gallery</h1>
           <p className="mt-2">Explore our tennis facilities, players, and events</p>
         </div>
