@@ -10,35 +10,35 @@ function Contact() {
     <div className="text-gray-700">
       {/* Header Section */}
       <div className="text-center py-24 px-4">
-        <h1 className="text-4xl font-bold text-green-600">CONTACT US</h1>
+        <h1 className="text-4xl font-bold text">CONTACT US</h1>
       </div>
 
       {/* Contact Information */}
       <div className="flex flex-wrap justify-center gap-8 px-4 md:px-20 text-center">
         {/* Location */}
         <div className="w-full sm:w-1/2 md:w-1/4">
-          <FaMapMarkerAlt className="text-green-600 text-3xl mx-auto" />
+          <FaMapMarkerAlt className="text text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Location</h3>
           <p>Rolider sports Complex, 9 Pacific Street, Shiashie-Accra</p>
         </div>
 
         {/* Phone */}
         <div className="w-full sm:w-1/2 md:w-1/4">
-          <FaPhoneAlt className="text-green-600 text-3xl mx-auto" />
+          <FaPhoneAlt className="text text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Phone</h3>
           <p>(+233) 55 8315717</p>
         </div>
 
         {/* Email */}
         <div className="w-full sm:w-1/2 md:w-1/4">
-          <FaEnvelope className="text-green-600 text-3xl mx-auto" />
+          <FaEnvelope className="text text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Email</h3>
           <p>info@dukecoach.com</p>
         </div>
 
         {/* Working Hours */}
         <div className="w-full sm:w-1/2 md:w-1/4">
-          <FaClock className="text-green-600 text-3xl mx-auto" />
+          <FaClock className="text text-3xl mx-auto" />
           <h3 className="mt-2 font-bold">Working Hours</h3>
           <p>Mon - Fri: 9:00 AM - 5:00 PM</p>
         </div>
@@ -46,7 +46,7 @@ function Contact() {
 
       {/* Contact Form */}
       <div className="mt-10 px-4 md:px-20">
-        <h2 className="text-3xl text-center font-bold text-green-600">Send Message</h2>
+        <h2 className="text-3xl text-center font-bold text">Send Message</h2>
         <form className="mt-6 max-w-lg mx-auto space-y-4">
           <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
             <input
@@ -77,7 +77,7 @@ function Contact() {
       </div>
 
       {/* Map Section */}
-      <div className="mt-10 px-4 md:px-20">
+      <div className="mt-10 px-4 md:px-20 mb-8">
         <h2 className="text-3xl text-center font-bold text-green-600 mb-6">Our Location</h2>
         <div className="w-full h-80 bg-gray-300 rounded-lg overflow-hidden">
           {/* Replace this div with an embedded map iframe if needed */}

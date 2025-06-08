@@ -2,9 +2,9 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import KidPic from "../images/fei-chao-y-ahbHZbs7Y-unsplash.jpg";
-import AdultsPic from "../images/fei-chao-zWhd4tIe_z4-unsplash.jpg";
-import TravelPic from "../images/richard-sagredo-oDlLU_1hZwM-unsplash.jpg";
+import KidPic from "../images/Kid.jpg";
+import AdultsPic from "../images/people.jpg";
+import TravelPic from "../images/another lady.png";
 
 function Services() {
   const navigate = useNavigate(); // For navigation
@@ -16,7 +16,7 @@ function Services() {
         {/* Header Section */}
         <div className="text-center py-24">
           <h1 className="text-4xl font-bold text-green-600">SERVICES</h1>
-          <p className="mt-2 text-xl font-semibold text-blue-900">
+          <p className="mt-2 text-xl font-semibold text-black">
             High-quality tennis coaching tailored for everyone
           </p>
         </div>
@@ -105,7 +105,7 @@ function Services() {
             <li className="flex items-start">
               <span className="text-2xl font-bold text-green-600 mr-4">02</span>
               <div>
-                <h3 className="font-bold text-lg">Hitting Partner</h3>
+                <h3 className="font-bold text-lg">Warm up Drills</h3>
                 <p className="text-sm text-gray-600">
                   Practice rallies and improve your gameplay with a hitting
                   partner.
@@ -115,7 +115,7 @@ function Services() {
             <li className="flex items-start">
               <span className="text-2xl font-bold text-green-600 mr-4">03</span>
               <div>
-                <h3 className="font-bold text-lg">Tactical Tennis</h3>
+                <h3 className="font-bold text-lg">Introduction of Tennis and Tournaments for Organisations</h3>
                 <p className="text-sm text-gray-600">
                   Advanced tactical training to elevate your game strategy.
                 </p>
@@ -154,12 +154,12 @@ function Services() {
       </section>
 
       {/* Welcome Section */}
-      <section className="py-16 px-6 text-center bg-green-400 text-white">
+      <section className="py-16 px-6 text-center text-">
         <h2 className="text-3xl font-bold">Everyone is Welcome at Our Tennis Club!</h2>
         <p className="mt-4">
           Whether you're a beginner or a pro, we have something for everyone. Join us to learn, play, and grow.
         </p>
-        <button  onClick={() => navigate('/booking')}className="mt-6 bg-white text-green-600 font-semibold py-2 px-4 rounded shadow-lg hover:bg-green-100">
+        <button  onClick={() => navigate('/booking')}className="mt-6 bg-green-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:bg-green-700">
           Get Started
         </button>
       </section>

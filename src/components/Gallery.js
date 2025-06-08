@@ -1,18 +1,27 @@
 import React, { useState, useEffect } from "react";
+import img1 from "../images/group.jpg";
+import img2 from "../images/girls.jpg";
+import img3 from "../images/cardio.jpg";
+import img4 from "../images/Kid.jpg";
+import img5 from "../images/One.jpg";
+import img6 from "../images/logo.png";
+import img7 from "../images/another guy.jpg";
+import img8 from "../images/guy.jpg";
+import img9 from "../images/dukeback.jpg";
+import img10 from "../images/another lady.png";
+import img11 from "../images/pink.jpg";
+import img12 from "../images/lady.jpg";
+import img13 from "../images/lowcut.jpg";
+import img14 from "../images/people.jpg";
+
+
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 const Gallery = () => {
   const [imagesLoaded, setImagesLoaded] = useState(false);
 
-  const imageList = [
-    "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-    "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-   "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-   "https://images.unsplash.com/photo-1530915534664-4ac6423816b7?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGJvb2tpbmclMjB0ZW5uaXN8ZW58MHx8MHx8fDA%3D",
-  ];
+  const imageList = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11,img12,img13,img14];
 
   // Simulate loading delay (for demonstration purposes)
   useEffect(() => {
@@ -25,12 +34,24 @@ const Gallery = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-gray-50 min-h-screen text-gray-700">
-        {/* Header */}
-        <div className="bg-green-500 text-white text-center py-24">
-          <h1 className="text-4xl font-bold">Gallery</h1>
-          <p className="mt-2">Explore our tennis facilities, players, and events</p>
-        </div>
+      
+{/* Hero Section */}
+<div
+  className="relative h-[60vh] bg-cover bg-center flex items-center justify-center"
+  style={{ backgroundImage: `url(${img9})` }}
+>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+  {/* Text content */}
+  <div className="relative z-10 text-center px-4 max-w-2xl">
+    <h1 className="text-4xl md:text-5xl font-extrabold text-white">Gallery</h1>
+    <p className="mt-4 text-lg md:text-xl text-gray-200">
+      Explore our tennis facilities, players, and events
+    </p>
+  </div>
+</div>
+
 
         {/* Gallery Section */}
         <div className="px-6 py-12 md:px-20">
@@ -55,7 +76,7 @@ const Gallery = () => {
             </div>
           )}
         </div>
-      </div>
+      
       <Footer />
     </>
   );

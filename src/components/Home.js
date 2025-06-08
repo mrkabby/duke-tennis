@@ -1,13 +1,13 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import heroImage from '../images/richard-sagredo-oDlLU_1hZwM-unsplash.jpg'; // Replace with actual hero image path
+import heroImage from '../images/girls.jpg'; // Replace with actual hero image path
 import coachImage from '../images/george.jpg'; // Replace with actual coach image path
-import serviceImage1 from '../images/rezli-WgqEXkbrvOg-unsplash.jpg';
-import serviceImage2 from '../images/fei-chao-y-ahbHZbs7Y-unsplash.jpg';
-import serviceImage3 from '../images/fei-chao-zWhd4tIe_z4-unsplash.jpg';
-import videoImage1 from '../images/DukeTennis.jpg';
+import serviceImage1 from '../images/group.jpg';
+import serviceImage2 from '../images/guy.jpg';
+import serviceImage3 from '../images/people.jpg';
+
 
 function HomePage() {
   const navigate = useNavigate();
@@ -21,9 +21,18 @@ function HomePage() {
           className="h-screen bg-cover bg-center flex items-center justify-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <h1 className="text-5xl font-bold text-white text-center">
-            Tennis <span className="text-green-400">Coaching</span>
-          </h1>
+          <div className="text-center">
+  <h1 className="text-5xl font-bold text-white">
+    Tennis <span className="text-green-400">Coaching</span>
+  </h1>
+  <p className="mt-4 text-lg text-white">Train with a certified coach and elevate your game.</p>
+  <button
+    onClick={() => navigate("/booking")}
+    className="mt-6 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
+  >
+    Book a Session
+  </button>
+</div>
         </div>
 
         {/* Coach Bio Section */}
@@ -42,14 +51,14 @@ function HomePage() {
             <h2 className="text-3xl font-bold text-gray-800">
               George Duke Nyarko
             </h2>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text">
               Duke is a professional tennis coach with years of experience in
               both playing and coaching. Dedicated to developing tennis skills
               for all levels, Duke brings a passion for the game and a deep
               understanding of techniques and strategies.
             </p>
             {/* Experience Section */}
-            <div className="mt-6 bg-green-50 p-6 rounded-lg shadow-lg">
+            <div className="mt-6 bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-bold text-green-600">Experience</h3>
               <ul className="mt-4 space-y-2">
                 <li className="flex items-start">
@@ -86,7 +95,7 @@ function HomePage() {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
-                <h3 className="text-lg font-bold">Travel Coaching</h3>
+                <h3 className="text-lg font-bold">Group Lessons</h3>
                 <p className="text-sm text-gray-500 mt-2">
                   Professional coaching on the go, wherever you need.
                 </p>
@@ -140,33 +149,45 @@ function HomePage() {
             </div>
           </div>
         </div>
+       {/* Video Tips Section */}
+<div className="py-10 px-6 md:px-20 bg-gray-50 text-center">
+  <h2 className="text-3xl font-bold text-green-600">Video Tennis Tips</h2>
+  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+    <iframe
+      className="w-full h-64 rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/vyP9VHCqWBw"
+      title="Tennis Tip 1"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    <iframe
+      className="w-full h-64 rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/upARuo1IoBA"
+      title="Tennis Tip 2"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    <iframe
+      className="w-full h-64 rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/nXiqzSp_ly0"
+      title="Tennis Tip 3"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+    <iframe
+      className="w-full h-64 rounded-lg shadow-lg"
+      src="https://www.youtube.com/embed/zaw_13yigUQ"
+      title="Tennis Tip 4"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</div>
 
-        {/* Video Tips Section */}
-        <div className="py-10 px-6 md:px-20 bg-green-50 text-center">
-          <h2 className="text-3xl font-bold text-green-600">Video Tennis Tips</h2>
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-8">
-            <img
-              src={videoImage1}
-              alt="Video Tip 1"
-              className="w-full h-64 object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={videoImage1}
-              alt="Video Tip 2"
-              className="w-full h-64 object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={videoImage1}
-              alt="Video Tip 3"
-              className="w-full h-64 object-cover rounded-lg shadow-lg"
-            />
-            <img
-              src={videoImage1}
-              alt="Video Tip 4"
-              className="w-full h-64 object-cover rounded-lg shadow-lg"
-            />
-          </div>
-        </div>
       </div>
       <Footer />
     </>

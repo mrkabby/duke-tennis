@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import tennisImage from "../images/rezli-FtNEYu8PTv0-unsplash.jpg"; // Replace with your actual image path
+import tennisImage from "../images/cardio.jpg"; // Replace with your actual image path
 import racketImage from "../images/yelitsa-suazo-QWbslY1FbF0-unsplash.jpg"; // Replace with actual image path for equipment
-import shoesImage from "../images/skye-studios-vt9yGEvu9dM-unsplash.jpg"; // Replace with actual image path for equipment
+import shirtImage from "../images/girls.jpg"; // Replace with actual image path for equipment
 import ballImage from "../images/richard-sagredo-Fp_V3HLbCLc-unsplash.jpg"; // Replace with actual image path for equipment
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -32,7 +32,9 @@ function Resources() {
           {/* Text Section */}
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-2xl font-bold text-green-600">EXPLORE OUR</h2>
-            <h3 className="text-4xl font-bold text-gray-900">TENNIS RESOURCES</h3>
+            <h3 className="text-4xl font-bold text-gray-900">
+              TENNIS RESOURCES
+            </h3>
 
             {/* Tabs */}
             <div className="flex flex-wrap space-x-4 mt-6 border-b-2 border-gray-300">
@@ -96,9 +98,16 @@ function Resources() {
                 className="w-full h-64 object-cover"
               />
               <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-gray-800">Tennis Racket</h3>
-                <p className="text-sm text-gray-600">Premium racket for optimal performance.</p>
-                <p className="text-green-600 font-semibold mt-2">$120</p>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Tennis Racket
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Premium racket for optimal performance.
+                </p>
+
+                <p className="text-sm text-gray-600">• New: GHS 2000–2500</p>
+                <p className="text-sm text-gray-600">• Used: GHS 800–3000</p>
+                <p className="text-sm text-gray-600">• Kids: GHS 400–1000</p>
               </div>
             </div>
 
@@ -113,18 +122,23 @@ function Resources() {
               }
             >
               <img
-                src={shoesImage}
+                src={ballImage}
                 alt="Tennis Shoes"
                 className="w-full h-64 object-cover"
               />
               <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-gray-800">Tennis Shoes</h3>
-                <p className="text-sm text-gray-600">Comfortable shoes for the perfect game.</p>
-                <p className="text-green-600 font-semibold mt-2">$80</p>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Tennis Accessories
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Get your quality accessories for the perfect game.
+                </p>
+                <p className="text-sm text-gray-600">• Grips: GHS 40</p>
+                <p className="text-sm text-gray-600">• Socks: GHS 30–100</p>
+                <p className="text-sm text-gray-600">• Balls: GHS 100</p>
+                <p className="text-sm text-gray-600">• Caps: GHS 90</p>
               </div>
             </div>
-
-            {/* Card 3 */}
             <div
               className="bg-white shadow-lg rounded-lg overflow-hidden cursor-pointer"
               onClick={() =>
@@ -135,14 +149,19 @@ function Resources() {
               }
             >
               <img
-                src={ballImage}
+                src={shirtImage}
                 alt="Tennis Balls"
                 className="w-full h-64 object-cover"
               />
               <div className="p-4 text-center">
-                <h3 className="text-lg font-bold text-gray-800">Tennis Balls</h3>
-                <p className="text-sm text-gray-600">Durable tennis balls for every match.</p>
-                <p className="text-green-600 font-semibold mt-2">$15</p>
+                <h3 className="text-lg font-bold text-gray-800">
+                  Duke Tennis Shirts
+                </h3>
+                <p className="text-sm text-gray-600">
+                  Durable tennis shirts for every match.
+                </p>
+                <p className="text-sm text-gray-600">• T-shirts: GHS 80</p>
+                <p className="text-sm text-gray-600">• Lacoste: GHS 100</p>
               </div>
             </div>
           </div>
