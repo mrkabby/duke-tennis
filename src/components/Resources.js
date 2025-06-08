@@ -105,8 +105,8 @@ function Resources() {
                   Premium racket for optimal performance.
                 </p>
 
-                <p className="text-sm text-gray-600">• New: GHS 2000–2500</p>
-                <p className="text-sm text-gray-600">• Used: GHS 800–3000</p>
+                <p className="text-sm text-gray-600">• New: GHS 2000–4000</p>
+                <p className="text-sm text-gray-600">• Used: GHS 800–2000</p>
                 <p className="text-sm text-gray-600">• Kids: GHS 400–1000</p>
               </div>
             </div>
