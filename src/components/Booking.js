@@ -127,18 +127,20 @@ const BookingPage = () => {
         <div>
           <label className="block text-lg font-semibold text-gray-600">Select Program</label>
           <select
-            name="program"
-            value={formData.program}
-            onChange={handleChange}
-            className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
-            required
-          >
-            <option value="">Choose a program...</option>
-            <option value="kids">Kids Tennis Classes</option>
-            <option value="adults">Adult Training Sessions</option>
-            <option value="advanced">Advanced Coaching</option>
-            <option value="family">Family Tennis Events</option>
-          </select>
+  name="program"
+  value={formData.program}
+  onChange={handleChange}
+  className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+  required
+>
+  <option value="">Choose a package...</option>
+  <option value="3x Weekly – GHC 1500 (Intensive)">3x Weekly – GHC 1500 (Intensive)</option>
+  <option value="2x Weekly – GHC 1200 (Semi-Intensive)">2x Weekly – GHC 1200 (Semi-Intensive)</option>
+  <option value="1x Weekly – GHC 700 (Regular)">1x Weekly – GHC 700 (Regular)</option>
+  <option value="Walk-In – GHC 200">Walk-In – GHC 200</option>
+  <option value="One-on-One – GHC 300">One-on-One – GHC 300</option>
+  <option value="One-on-One Monthly – GHC 2000">One-on-One Monthly – GHC 2000</option>
+</select>
         </div>
 
         {/* Date */}
