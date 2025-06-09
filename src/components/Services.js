@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import KidPic from "../images/Kid.jpg";
-import AdultsPic from "../images/people.jpg";
+import AdultsPic from "../images/group.jpg";
 import TravelPic from "../images/another lady.png";
+import CardioPic from "../images/cardio.jpg";
+import CompanyPic from "../images/people.jpg";
 
 function Services() {
   const navigate = useNavigate(); // For navigation
@@ -33,7 +35,8 @@ function Services() {
             <div className="p-6">
               <h3 className="text-lg font-bold">Private Lessons</h3>
               <p className="text-sm text-gray-500 mt-2">
-                One-on-one coaching tailored to improve your skills rapidly.
+                One-on-one coaching to improve your skills and technique.
+                
               </p>
               <button
                 onClick={() => navigate("/booking")}
@@ -86,59 +89,71 @@ function Services() {
               </button>
             </div>
           </div>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img
+              src={CardioPic}
+              alt="Cardio and Warm Up Drills"
+              className="w-full h-56 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-lg font-bold">Cardio and Warm Up Drills</h3>
+              <p className="text-sm text-gray-500 mt-2">
+                Get your heart pumping with cardio tennis and warm-up drills
+                that enhance your skills while keeping you fit.
+              </p>
+              <button
+                onClick={() => navigate("/booking")}
+                className="text-green-500 font-semibold mt-4"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
+          <div className="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img
+              src={CompanyPic}
+              alt="Introduction of Tennis and Tournaments for Organisations"
+              className="w-full h-56 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-lg font-bold">
+                Introduction of Tennis and Tournaments for Organisations
+              </h3>
+              <p className="text-sm text-gray-500 mt-2">
+                A full tennis program for organizations or group who want an
+                introduction of the game. We introduce the game to you by taking
+                you through the basics of the game and a fun mini tournament to
+                have a feel of the competitive aspect of the game
+              </p>
+              <button
+                onClick={() => navigate("/booking")}
+                className="text-green-500 font-semibold mt-4"
+              >
+                Book Now
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Additional Services Section */}
-        <div className="mt-20 bg-green-50 p-10 md:p-20">
-          <h2 className="text-3xl font-bold text-green-600">Additional Services</h2>
-          <p className="mt-4 text-blue-900 font-semibold">Explore more options</p>
-          <ul className="mt-6 space-y-6">
-            <li className="flex items-start">
-              <span className="text-2xl font-bold text-green-600 mr-4">01</span>
-              <div>
-                <h3 className="font-bold text-lg">Cardio Tennis</h3>
-                <p className="text-sm text-gray-600">
-                  Get fit while playing tennis with music, fun, and energy.
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-2xl font-bold text-green-600 mr-4">02</span>
-              <div>
-                <h3 className="font-bold text-lg">Warm up Drills</h3>
-                <p className="text-sm text-gray-600">
-                  Practice rallies and improve your gameplay with a hitting
-                  partner.
-                </p>
-              </div>
-            </li>
-            <li className="flex items-start">
-              <span className="text-2xl font-bold text-green-600 mr-4">03</span>
-              <div>
-                <h3 className="font-bold text-lg">Introduction of Tennis and Tournaments for Organisations</h3>
-                <p className="text-sm text-gray-600">
-                  Advanced tactical training to elevate your game strategy.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        
-          
       </div>
-      <section className="bg-gray-100 py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10">Why Train with Us?</h2>
+      <section className="bg-gray-100 py-16 px-6 mt-7">
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Why Train with Us?
+        </h2>
         <div className="grid md:grid-cols-4 gap-8 text-center">
           <div>
             <div className="text-green-600 text-4xl mb-4">🎾</div>
             <h4 className="text-lg font-bold">Modern Equipment</h4>
-            <p className="text-gray-600">Top-quality tennis gear for every session.</p>
+            <p className="text-gray-600">
+              Top-quality tennis gear for every session.
+            </p>
           </div>
           <div>
             <div className="text-green-600 text-4xl mb-4">🏆</div>
             <h4 className="text-lg font-bold">Competitive Matches</h4>
-            <p className="text-gray-600">Regular tournaments to test your skills.</p>
+            <p className="text-gray-600">
+              Regular tournaments to test your skills.
+            </p>
           </div>
           <div>
             <div className="text-green-600 text-4xl mb-4">👟</div>
@@ -148,18 +163,27 @@ function Services() {
           <div>
             <div className="text-green-600 text-4xl mb-4">🌟</div>
             <h4 className="text-lg font-bold">All Levels Welcome</h4>
-            <p className="text-gray-600">Programs for beginners to advanced players.</p>
+            <p className="text-gray-600">
+              Programs for beginners to advanced players.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Welcome Section */}
       <section className="py-16 px-6 text-center text-">
-        <h2 className="text-3xl font-bold">Everyone is Welcome at Our Tennis Club!</h2>
+        <h2 className="text-3xl font-bold">
+          Everyone is Welcome at Our Tennis School
+        </h2>
         <p className="mt-4">
-          Whether you're a beginner or a pro, we have something for everyone. Join us to learn, play, and grow.
+          Whether you're a beginner or an experienced player, our tennis school
+          offers a welcoming environment for everyone. Join us to improve your
+          skills, meet new friends, and enjoy the game of tennis!
         </p>
-        <button  onClick={() => navigate('/booking')}className="mt-6 bg-green-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:bg-green-700">
+        <button
+          onClick={() => navigate("/booking")}
+          className="mt-6 bg-green-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:bg-green-700"
+        >
           Get Started
         </button>
       </section>

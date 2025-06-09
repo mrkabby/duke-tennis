@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import heroImage from '../images/girls.jpg'; 
 import coachImage from '../images/duke.jpg'; 
 import serviceImage1 from '../images/group.jpg';
-import serviceImage2 from '../images/guy.jpg';
+import serviceImage2 from '../images/pink.jpg';
 import serviceImage3 from '../images/people.jpg';
 
 
@@ -97,7 +97,8 @@ function HomePage() {
               <div className="p-6">
                 <h3 className="text-lg font-bold">Group Lessons</h3>
                 <p className="text-sm text-gray-500 mt-2">
-                  Professional coaching on the go, wherever you need.
+                  Join our group lessons for an interactive and fun way to
+                  improve your skills with others.
                 </p>
                 <button
                   onClick={() => navigate('/services')}
@@ -117,7 +118,7 @@ function HomePage() {
               <div className="p-6">
                 <h3 className="text-lg font-bold">Personal Training</h3>
                 <p className="text-sm text-gray-500 mt-2">
-                  Tailored training sessions for individuals.
+                  Tailored training sessions to improve your skills and fitness.
                 </p>
                 <button
                   onClick={() => navigate('/services')}
@@ -137,7 +138,7 @@ function HomePage() {
               <div className="p-6">
                 <h3 className="text-lg font-bold">Children's Classes</h3>
                 <p className="text-sm text-gray-500 mt-2">
-                  Fun and engaging tennis classes for kids.
+                  Fun and engaging tennis classes for kids of all ages.
                 </p>
                 <button
                   onClick={() => navigate('/services')}

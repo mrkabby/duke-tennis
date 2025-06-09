@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import tennisImage from "../images/cardio.jpg"; // Replace with your actual image path
-import racketImage from "../images/yelitsa-suazo-QWbslY1FbF0-unsplash.jpg"; // Replace with actual image path for equipment
-import shirtImage from "../images/girls.jpg"; // Replace with actual image path for equipment
-import ballImage from "../images/richard-sagredo-Fp_V3HLbCLc-unsplash.jpg"; // Replace with actual image path for equipment
+import tennisImage from "../images/One.jpg"; 
+import racketImage from "../images/yelitsa-suazo-QWbslY1FbF0-unsplash.jpg"; 
+import shirtImage from "../images/girls.jpg"; 
+import ballImage from "../images/richard-sagredo-Fp_V3HLbCLc-unsplash.jpg"; 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
