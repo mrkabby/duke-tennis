@@ -25,16 +25,18 @@ function About() {
 
           {/* Text Section */}
           <div className="w-full md:w-1/2 mt-8 md:mt-0 md:pl-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-gray-800">ABOUT THE CLUB</h2>
+            <h2 className="text-3xl font-bold text-gray-800">ABOUT DUKETENNIS</h2>
             <p className="mt-4 text-gray-600">
-              At the award-winning ProShot Tennis Club, lawn tennis is more than
-              just a cold-calculated business — it is passion!
+              DUKETENNIS is a premier tennis club in Ghana, offering world-class
+              facilities and coaching. Our mission is to promote tennis as a
+              sport for all ages and skill levels, providing a welcoming
+              environment for both players and spectators.
             </p>
             <p className="mt-2 text-gray-600">
-              Renowned as one of the country's most outstanding facilities by
-              the United States Tennis Association, this award-winning complex
-              offers a "home away from home" country club setting for resort
-              visitors and Maui residents alike.
+              Whether you're a beginner looking to learn the basics or an
+              experienced player seeking advanced training, DUKETENNIS has
+              something for everyone. Join us to improve your skills, compete in
+              tournaments, and be part of a vibrant tennis community.
             </p>
             <div className="mt-6 space-x-4">
               <button

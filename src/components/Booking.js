@@ -140,6 +140,7 @@ const BookingPage = () => {
   <option value="Walk-In – GHC 200">Walk-In – GHC 200</option>
   <option value="One-on-One – GHC 300">One-on-One – GHC 300</option>
   <option value="One-on-One Monthly – GHC 2000">One-on-One Monthly – GHC 2000</option>
+  <option value="Kids Lessons 2x a Week – GHC 1000">Kids Lessons 2x a Week – GHC 1000</option>
 </select>
         </div>
 
@@ -183,6 +184,7 @@ const BookingPage = () => {
           <ul className="space-y-2">
             <li>• Walk-In Group: GHC 200/session</li>
             <li>• One-on-One: GHC 300/session or GHC 2000/month (8 sessions)</li>
+            <li>• Kids Lessons (2x a week): GHC 1000/month</li>
             <li className="text-xs font-bold italic">*Court fees not included</li>
           </ul>
         </div>

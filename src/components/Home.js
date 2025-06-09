@@ -2,8 +2,8 @@
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import heroImage from '../images/girls.jpg'; // Replace with actual hero image path
-import coachImage from '../images/george.jpg'; // Replace with actual coach image path
+import heroImage from '../images/girls.jpg'; 
+import coachImage from '../images/duke.jpg'; 
 import serviceImage1 from '../images/group.jpg';
 import serviceImage2 from '../images/guy.jpg';
 import serviceImage3 from '../images/people.jpg';
@@ -49,7 +49,7 @@ function HomePage() {
           {/* Coach Text Section */}
           <div className="w-full md:w-2/3 md:pl-10 text-center md:text-left">
             <h2 className="text-3xl font-bold text-gray-800">
-              George Duke Nyarko
+              George Duke Nyarkoh
             </h2>
             <p className="mt-4 text">
               Duke is a professional tennis coach with years of experience in
@@ -67,11 +67,11 @@ function HomePage() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">•</span>
-                  <p>Professional player for 5 years</p>
+                  <p>20 years of playing experience</p>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">•</span>
-                  <p>Certified by the National Tennis Federation</p>
+                  <p>PTR certified Coach</p>
                 </li>
                 <li className="flex items-start">
                   <span className="text-green-500 mr-2">•</span>
