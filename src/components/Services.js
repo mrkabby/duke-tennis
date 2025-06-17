@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import KidPic from "../images/Kid.jpg";
-import AdultsPic from "../images/group.jpg";
+import AdultsPic from "../images/semi.jpg";
 import TravelPic from "../images/another lady.png";
 import CardioPic from "../images/cardio.jpg";
 import CompanyPic from "../images/people.jpg";
@@ -36,6 +36,7 @@ function Services() {
               <h3 className="text-lg font-bold">Private Lessons</h3>
               <p className="text-sm text-gray-500 mt-2">
                 One-on-one coaching to improve your skills and technique.
+                 Availabe Mornings and Weekends for private lessons
                 
               </p>
               <button

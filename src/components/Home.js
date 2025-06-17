@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import heroImage from '../images/girls.jpg'; 
 import coachImage from '../images/duke.jpg'; 
-import serviceImage1 from '../images/group.jpg';
+import serviceImage1 from '../images/semi.jpg';
 import serviceImage2 from '../images/pink.jpg';
 import serviceImage3 from '../images/people.jpg';
 
