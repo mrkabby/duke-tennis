@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Duke Tennis",
+  "name": "Duke Tennis - Professional Tennis Coaching in Ghana",
+  "description": "Professional tennis coaching with George Duke Nyarkoh in Ghana. Expert PTR certified coach offering private lessons, group coaching, and tennis programs across 6 regions.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +19,12 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://duketennis.org/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#10b981",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "categories": ["sports", "education", "health"],
+  "lang": "en",
+  "scope": "https://duketennis.org/"
 }

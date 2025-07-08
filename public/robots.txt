@@ -1,3 +1,11 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://duke-tennis.vercel.app/sitemap.xml
+
+# Crawl delay (optional, helps with server load)
+Crawl-delay: 1
