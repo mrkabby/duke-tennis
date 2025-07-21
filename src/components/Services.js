@@ -2,6 +2,8 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import SEO from "./SEO";
+import { getSEOData } from "../utils/seoData";
 import KidPic from "../images/Kid.jpg";
 import AdultsPic from "../images/semi.jpg";
 import TravelPic from "../images/another lady.png";
@@ -10,9 +12,17 @@ import CompanyPic from "../images/people.jpg";
 
 function Services() {
   const navigate = useNavigate(); // For navigation
+  const seoData = getSEOData('services');
 
   return (
     <>
+      <SEO 
+        title={seoData.title}
+        description={seoData.description}
+        keywords={seoData.keywords}
+        url={seoData.url}
+        schemaData={seoData.schema}
+      />
       <Navbar />
       <div className="text-gray-700">
         {/* Header Section */}
