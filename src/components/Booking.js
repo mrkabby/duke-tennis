@@ -183,7 +183,8 @@ const BookingPage = () => {
           <h4 className="text-lg font-semibold mb-2">Other Options</h4>
           <ul className="space-y-2">
             <li>• Walk-In Group: GHC 200/session</li>
-            <li>• One-on-One: GHC 300/session or GHC 2000/month (8 sessions)</li>
+            <li>• One-on-One: GHC 500/session </li>
+            <li>• Private session with Duke: GHC 1000/session</li>
             <li>• Kids Lessons (2x a week): GHC 1000/month</li>
             <li className="text-xs font-bold italic">*Court fees not included</li>
           </ul>
