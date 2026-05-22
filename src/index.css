@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-slate-800 antialiased selection:bg-volt-300 selection:text-darkslate-950;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+/* Custom Scrollbar for modern premium look */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-darkslate-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full hover:bg-volt-400 transition-colors;
+}
+
+/* Custom Glow utilities */
+.glow-volt {
+  box-shadow: 0 0 20px rgba(197, 242, 0, 0.15);
+}
+
+.glow-volt-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glow-volt-hover:hover {
+  box-shadow: 0 0 25px rgba(197, 242, 0, 0.45);
+}
