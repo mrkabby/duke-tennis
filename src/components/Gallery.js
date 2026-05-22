@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import img1 from "../images/group.jpg";
 import img2 from "../images/girls.jpg";
 import img3 from "../images/cardio.jpg";
@@ -78,15 +78,15 @@ const Gallery = () => {
     setLightboxOpen(false);
   };
 
-  const nextImage = (e) => {
+  const nextImage = useCallback((e) => {
     if (e) e.stopPropagation();
     setLightboxIndex((prev) => (prev + 1) % filteredItems.length);
-  };
+  }, [filteredItems.length]);
 
-  const prevImage = (e) => {
+  const prevImage = useCallback((e) => {
     if (e) e.stopPropagation();
     setLightboxIndex((prev) => (prev - 1 + filteredItems.length) % filteredItems.length);
-  };
+  }, [filteredItems.length]);
 
   // Keyboard navigation for Lightbox Accessibility
   useEffect(() => {
