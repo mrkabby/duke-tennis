@@ -19,7 +19,7 @@ export const seoConfig = {
   // Contact information
   contact: {
     phone: '+233-XXX-XXX-XXX',
-    email: 'info@duketennis.org',
+    email: 'duketennis4@gmail.com',
     address: {
       country: 'Ghana',
       region: 'Greater Accra',

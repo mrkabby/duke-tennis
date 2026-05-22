@@ -26,7 +26,7 @@ const INFO_CARDS = [
   {
     icon: <FaEnvelope className="text-volt-400 text-2xl" />,
     title: 'Email',
-    lines: ['info@duketennis.org'],
+    lines: ['duketennis4@gmail.com'],
   },
   {
     icon: <FaClock className="text-volt-400 text-2xl" />,
@@ -350,13 +350,13 @@ function Contact() {
                     </span>
                   </a>
                   <a
-                    href="mailto:info@duketennis.org"
+                    href="mailto:duketennis4@gmail.com"
                     id="contact-email-link"
                     className="flex items-center gap-3 bg-white/5 hover:bg-volt-400/10 border border-white/10 hover:border-volt-400/40 rounded-xl px-4 py-3 transition-all duration-300 group"
                   >
                     <FaEnvelope className="text-volt-400 flex-shrink-0" />
                     <span className="text-gray-300 group-hover:text-white text-sm font-sans transition-colors">
-                      info@duketennis.org
+                      duketennis4@gmail.com
                     </span>
                   </a>
                 </div>

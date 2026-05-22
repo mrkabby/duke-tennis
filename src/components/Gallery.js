@@ -13,6 +13,11 @@ import img11 from "../images/pink.jpg";
 import img12 from "../images/lady.jpg";
 import img13 from "../images/lowcut.jpg";
 import img14 from "../images/people.jpg";
+import img15 from "../images/after seesion.jpeg";
+import img16 from "../images/group training.jpeg";
+import img17 from "../images/female session.jpeg";
+import img18 from "../images/team photo.jpeg";
+import img19 from "../images/clients photo.jpeg";
 
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -34,6 +39,11 @@ const GALLERY_ITEMS = [
   { id: 12, src: img12, title: "Closed Stance Backhand", category: "Action Shots", desc: "Capturing linear power transfer and racket head speed on a crisp, down-the-line backhand drive." },
   { id: 13, src: img13, title: "Net Attack & Volley Finish", category: "Action Shots", desc: "Perfecting aggressive transitional footwork, split steps, and sharp angle volley execution." },
   { id: 14, src: img14, title: "Duke Tennis Community Cup", category: "Academy Life", desc: "Celebrating local tennis enthusiasts, sportsmanship, and outstanding player milestones at the academy." },
+  { id: 15, src: img15, title: "Post-Training Session Celebration", category: "Academy Life", desc: "Capturing the energy and camaraderie after an intensive training session." },
+  { id: 16, src: img16, title: "Group Training in Action", category: "Academy Life", desc: "Dynamic collaborative training showcasing team development and competitive practice." },
+  { id: 17, src: img17, title: "Female Player Advanced Techniques", category: "Junior Lessons", desc: "Empowering women through specialized skill development and tactical training." },
+  { id: 18, src: img18, title: "Duke Tennis Team Gathering", category: "Academy Life", desc: "United team moment celebrating collective progress and academy spirit." },
+  { id: 19, src: img19, title: "Client Success Showcase", category: "Academy Life", desc: "Testimonial featuring dedicated clients achieving their tennis goals at Duke Tennis." },
 ];
 
 const CATEGORIES = ["All", "Action Shots", "Junior Lessons", "Private Lessons", "Cardio Tennis", "Academy Life"];
@@ -88,7 +98,7 @@ const Gallery = () => {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxOpen, lightboxIndex, filteredItems]);
+  }, [lightboxOpen, lightboxIndex, filteredItems, nextImage, prevImage]);
 
   return (
     <div className="bg-slate-950 min-h-screen text-white">

@@ -22,6 +22,8 @@ const PACKAGES = [
   { label: "One-on-One – GHC 500/session", value: "One-on-One – GHC 500" },
   { label: "One-on-One Monthly – GHC 2,000", value: "One-on-One Monthly – GHC 2000" },
   { label: "Kids Lessons 2x a Week – GHC 1,000", value: "Kids Lessons 2x a Week – GHC 1000" },
+  { label: "Racket Rental – GHC 50/session", value: "Racket Rental – GHC 50" },
+  { label: "Event/Organization Booking – From GHC 7,000", value: "Event/Organization Booking – From GHC 7000" },
 ];
 
 const TERMS = [
@@ -370,6 +372,24 @@ const BookingPage = () => {
                       ["Walk-In Group", "GHC 200/s"],
                       ["One-on-One", "GHC 500/s"],
                       ["Kids (2x/wk)", "GHC 1,000"],
+                    ].map(([label, price]) => (
+                      <li key={label} className="flex justify-between">
+                        <span>{label}:</span>
+                        <span className="font-bold text-darkslate-900">{price}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Additional Services */}
+                <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                  <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
+                    Add-ons & Equipment
+                  </h4>
+                  <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
+                    {[
+                      ["Racket Rental", "GHC 50/s"],
+                      ["Event Bookings", "From GHC 7,000"],
                     ].map(([label, price]) => (
                       <li key={label} className="flex justify-between">
                         <span>{label}:</span>

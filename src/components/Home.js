@@ -42,7 +42,7 @@ function HomePage() {
             With Professional Coaching
           </h1>
           <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed font-sans">
-            Train with George Duke Nyarkoh, a highly experienced PTR-certified coach dedicated to developing skills for players of all levels.
+            Train with DUKETENNIS, a tennis community of coaches dedicated to developing skills for players of all levels.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <button
@@ -171,6 +171,110 @@ function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Schedule Preview Section */}
+      <section className="py-24 px-6 md:px-12 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Schedule Info */}
+            <div className="order-2 lg:order-1">
+              <span className="text-volt-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
+                DUKETENNIS Schedule
+              </span>
+              <h2 className="text-4xl font-heading font-extrabold text-darkslate-900 mb-6 leading-tight">
+                Flexible Classes for Every Schedule
+              </h2>
+              <p className="text-gray-600 font-sans mb-8 leading-relaxed">
+                Train at your pace with working days classes, weekend sessions, and early morning programs at our premium facilities in Accra.
+              </p>
+              
+              <div className="space-y-4 mb-10">
+                <div className="flex items-start gap-4">
+                  <div>
+                    <p className="font-heading font-bold text-darkslate-900">Working Days (Mon-Fri)</p>
+                    <p className="text-sm text-gray-600">5:30pm - 10:00pm at Rolider Sports Complex</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div>
+                    <p className="font-heading font-bold text-darkslate-900">Weekend Sessions (Sat-Sun)</p>
+                    <p className="text-sm text-gray-600">5:30pm - 7:00pm (Adults), 5:00pm - 6:00pm (Kids)</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div>
+                    <p className="font-heading font-bold text-darkslate-900">Morning Programs (Tue-Fri)</p>
+                    <p className="text-sm text-gray-600">7:00am - 8:30am at Campus Hub, Legon</p>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                onClick={() => navigate('/services')}
+                className="bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+              >
+                View Full Schedule
+              </button>
+            </div>
+
+            {/* Pricing Card */}
+            <div className="order-1 lg:order-2">
+              <div className="bg-white rounded-3xl border border-slate-100 shadow-xl p-10 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-volt-400/5 rounded-full filter blur-3xl pointer-events-none"></div>
+                
+                <h3 className="text-2xl font-heading font-extrabold text-darkslate-900 mb-8 relative z-10">
+                  Our Rates
+                </h3>
+
+                <div className="space-y-6 relative z-10">
+                  <div>
+                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Monthly Plans</p>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">3x a Week</span>
+                        <span className="font-bold text-darkslate-900">GHS 1,500</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">2x a Week</span>
+                        <span className="font-bold text-darkslate-900">GHS 1,200</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">1x a Week</span>
+                        <span className="font-bold text-darkslate-900">GHS 700</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-slate-100 pt-6">
+                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Pay-As-You-Go</p>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">Walk-In Group</span>
+                        <span className="font-bold text-darkslate-900">GHS 200</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">One-on-One</span>
+                        <span className="font-bold text-darkslate-900">GHS 500</span>
+                      </div>
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">Racket Rental</span>
+                        <span className="font-bold text-darkslate-900">GHS 50</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => navigate('/booking')}
+                  className="w-full mt-8 bg-volt-400 hover:bg-volt-300 text-darkslate-950 font-heading font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 glow-volt-hover relative z-10"
+                >
+                  Book a Session
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

@@ -177,6 +177,185 @@ function Services() {
         </div>
       </div>
 
+      {/* Class Schedule Section */}
+      <section className="bg-slate-50 py-24 px-6 md:px-12 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="text-volt-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
+              Class Schedule & Locations
+            </span>
+            <h2 className="text-4xl font-heading font-extrabold text-darkslate-900 mb-4">
+              DUKETENNIS Training Groups
+            </h2>
+            <p className="text-gray-600 font-sans text-lg max-w-2xl mx-auto">
+              Flexible schedules designed for all skill levels. Train at Rolider Sports Complex or join our morning sessions at Campus Hub.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            {/* Working Days Group */}
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <div className="bg-gradient-to-r from-volt-400 to-emerald-500 p-6 text-white">
+                <h3 className="text-2xl font-heading font-extrabold">
+                  Working Days Group
+                </h3>
+              </div>
+              <div className="p-8 space-y-6">
+                <div className="border-l-4 border-volt-400 pl-6">
+                  <p className="font-heading font-bold text-darkslate-900 mb-2">
+                    Mondays & Wednesdays (Beginners Only)
+                  </p>
+                  <p className="text-gray-600">5:30pm - 7:00pm</p>
+                </div>
+                <div className="border-l-4 border-emerald-500 pl-6">
+                  <p className="font-heading font-bold text-darkslate-900 mb-2">
+                    Tuesdays & Thursdays (Intermediate & Advance)
+                  </p>
+                  <p className="text-gray-600">5:30pm - 10:00pm</p>
+                </div>
+                <div className="border-l-4 border-volt-400 pl-6">
+                  <p className="font-heading font-bold text-darkslate-900 mb-2">
+                    Fridays (All Levels)
+                  </p>
+                  <p className="text-gray-600">5:30pm - 10:00pm</p>
+                </div>
+                <div className="bg-slate-50 rounded-2xl p-4 mt-6">
+                  <p className="text-sm font-heading font-bold text-darkslate-900">
+                    Location: Rolider Sports Complex
+                  </p>
+                  <p className="text-xs text-gray-600 mt-1">
+                    Premium tennis facility with professional courts
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Weekend & Morning Sessions */}
+            <div className="space-y-8">
+              {/* Weekend Group */}
+              <div className="bg-white rounded-3xl border border-slate-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 text-white">
+                  <h3 className="text-2xl font-heading font-extrabold">Weekend Group</h3>
+                </div>
+                <div className="p-8 space-y-5">
+                  <div>
+                    <p className="font-heading font-bold text-darkslate-900 mb-2">
+                      Adult Sessions
+                    </p>
+                    <p className="text-sm text-gray-600 ml-2">
+                      <span className="font-semibold">Saturdays & Sundays:</span> 5:30pm - 7:00pm
+                    </p>
+                  </div>
+                  <div className="border-t border-slate-100 pt-5">
+                    <p className="font-heading font-bold text-darkslate-900 mb-2">
+                      Kids Sessions
+                    </p>
+                    <p className="text-sm text-gray-600 ml-2">
+                      <span className="font-semibold">Saturdays & Sundays:</span> 5:00pm - 6:00pm
+                    </p>
+                  </div>
+                  <div className="bg-slate-50 rounded-2xl p-4 mt-6">
+                    <p className="text-sm text-gray-600">
+                      <span className="font-heading font-bold text-darkslate-900">Rolider Sports Complex</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Morning Sessions */}
+              <div className="bg-white rounded-3xl border border-slate-100 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="bg-gradient-to-r from-sky-400 to-blue-600 p-6 text-white">
+                  <h3 className="text-2xl font-heading font-extrabold">Morning Sessions</h3>
+                </div>
+                <div className="p-8 space-y-4">
+                  <div>
+                    <p className="font-heading font-bold text-darkslate-900 mb-2">
+                      All Levels Welcome
+                    </p>
+                    <p className="text-sm text-gray-600 ml-2">
+                      <span className="font-semibold">Tuesdays, Thursdays & Fridays</span>
+                    </p>
+                    <p className="text-sm text-gray-600 ml-2 font-semibold">
+                      7:00am - 8:30am
+                    </p>
+                  </div>
+                  <div className="bg-slate-50 rounded-2xl p-4 mt-6">
+                    <p className="text-sm font-heading font-bold text-darkslate-900">
+                      Campus Hub Restaurant
+                    </p>
+                    <p className="text-xs text-gray-600 mt-1">
+                      University of Ghana, Legon
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Pricing & Add-ons */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Monthly Pricing */}
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
+              <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
+                Monthly Rates
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">3x a Week</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 1,500</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">2x a Week</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 1,200</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">Once a Week</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 700</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Services */}
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
+              <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
+                Additional Services
+              </h3>
+              <div className="space-y-4 text-sm">
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">Walk-In Group Session</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 200</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">One-on-One Lesson</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 500</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">Racket Rental / Session</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 50</span>
+                </div>
+                <div className="flex justify-between items-center pt-3">
+                  <span className="text-gray-600">Event/Organization Bookings</span>
+                  <span className="font-heading font-bold text-darkslate-900">From GHS 7,000</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 italic mt-4 pt-4 border-t border-slate-100">
+                * Prices vary based on event size and requirements
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => navigate("/booking")}
+              className="bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-sm uppercase tracking-widest py-4 px-10 rounded-full shadow-lg transition-all duration-300 hover:scale-105"
+            >
+              Book Your Class Today
+            </button>
+          </div>
+        </div>
+      </section>
+            
       {/* Feature Icons Section ("Why Train with Us?") */}
       <section className="bg-slate-50 py-24 px-6 md:px-12 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">

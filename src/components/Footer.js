@@ -107,8 +107,8 @@ function Footer() {
               <FaEnvelope className="text-volt-400 mt-1" />
               <div>
                 <p className="text-white font-semibold">Email Us</p>
-                <a href="mailto:info@duketennis.org" className="hover:text-volt-400 transition-colors duration-300">
-                  info@duketennis.org
+                <a href="mailto:duketennis4@gmail.com" className="hover:text-volt-400 transition-colors duration-300">
+                  duketennis4@gmail.com
                 </a>
               </div>
             </li>
@@ -116,7 +116,7 @@ function Footer() {
               <FaMapMarkerAlt className="text-volt-400 mt-1" />
               <div>
                 <p className="text-white font-semibold">Locations</p>
-                <p className="text-gray-400">Accra, Ashanti & 4 other regions in Ghana</p>
+                <p className="text-gray-400">Rolider Sports complex</p>
               </div>
             </li>
           </ul>
