@@ -42,7 +42,7 @@ function HomePage() {
             With Professional Coaching
           </h1>
           <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed font-sans">
-            Train with DUKETENNIS, a tennis community of coaches dedicated to developing skills for players of all levels.
+            Train with DUKETENNIS, a tennis community with coaches dedicated to developing skills for players of all levels.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <button
@@ -102,6 +102,7 @@ function HomePage() {
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
+                  "Former Ghanaian national and international professional tennis player",
                   "Over 10 years coaching expertise",
                   "20+ years of active play",
                   "Certified PTR Coach",
