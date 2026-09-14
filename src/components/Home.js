@@ -256,9 +256,10 @@ function HomePage() {
                         <span className="text-gray-600">Walk-In Group</span>
                         <span className="font-bold text-darkslate-900">GHS 200</span>
                       </div>
+                      
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One</span>
-                        <span className="font-bold text-darkslate-900">GHS 500</span>
+                        <span className="text-gray-600">One-on-One with Coach</span>
+                        <span className="font-bold text-darkslate-900">GHS 1000</span>
                       </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Racket Rental</span>

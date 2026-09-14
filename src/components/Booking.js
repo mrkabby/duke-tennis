@@ -20,6 +20,7 @@ const PACKAGES = [
   { label: "1x Weekly – GHC 700 (Regular)", value: "1x Weekly – GHC 700 (Regular)" },
   { label: "Walk-In Group – GHC 200/session", value: "Walk-In – GHC 200" },
   { label: "One-on-One – GHC 500/session", value: "One-on-One – GHC 500" },
+  { label: "One-on-One with Coach – GHC 1000/session", value: "one-on-one with Coach – GHC 1000" },
   { label: "One-on-One Monthly – GHC 2,000", value: "One-on-One Monthly – GHC 2000" },
   { label: "Kids Lessons 2x a Week – GHC 1,000", value: "Kids Lessons 2x a Week – GHC 1000" },
   { label: "Racket Rental – GHC 50/session", value: "Racket Rental – GHC 50" },
@@ -370,6 +371,7 @@ const BookingPage = () => {
                   <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
                     {[
                       ["Walk-In Group", "GHC 200/s"],
+                      ["One-on-One with Coach", "GHC 1000/s"],
                       ["One-on-One", "GHC 500/s"],
                       ["Kids (2x/wk)", "GHC 1,000"],
                     ].map(([label, price]) => (
