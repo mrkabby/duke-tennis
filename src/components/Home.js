@@ -258,12 +258,12 @@ function HomePage() {
                       </div>
                       
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One with Coach</span>
-                        <span className="font-bold text-darkslate-900">GHS 1000</span>
+                        <span className="text-gray-600">One-on-One with Coach </span>
+                        <span className="font-bold text-darkslate-900">GHS 500</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Racket Rental</span>
-                        <span className="font-bold text-darkslate-900">GHS 50</span>
+                        <span className="text-gray-600">One-on-One with Head Coach Duke </span>
+                        <span className="font-bold text-darkslate-900">GHS 1000</span>
                       </div>
                     </div>
                   </div>
