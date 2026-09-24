@@ -7,6 +7,7 @@ import Booking from './components/Booking';
 import Resources from './components/Resources';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import DecemberFestival from './components/DecemberFestival';
 import SEO from './components/SEO';
 import GoogleAnalytics from './components/GoogleAnalytics';
 import { seoConfig } from './config/seoConfig';
@@ -25,6 +26,8 @@ function App() {
           <Route path="/resources" element={<Resources />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/december-festival" element={<DecemberFestival />} />
+          <Route path="/festival" element={<DecemberFestival />} />
         </Routes>
       </div>
     </Router>

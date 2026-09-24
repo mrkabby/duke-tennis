@@ -100,8 +100,8 @@ function Services() {
               title: "Group Lessons",
               img: AdultsPic,
               desc: "Join our dynamic, high-energy group coaching cohorts for an interactive, technical, and social tennis routine.",
-              pricing: "GHS 700 / Month",
-              duration: "1x - 3x Weekly",
+              pricing: "GHS 1,500 / Month",
+              duration: "Monthly Subscription",
               tag: "Popular Choice"
             },
             {
@@ -109,14 +109,14 @@ function Services() {
               img: KidPic,
               desc: "Fun, safe, and highly structured developmental programs tailored to build coordination, speed, and fundamental strokes.",
               pricing: "GHS 1000 / Month",
-              duration: "2x Weekly",
+              duration: "Monthly Subscription",
               tag: "Ages 5 - 16"
             },
             {
               title: "Cardio & Warm-up Drills",
               img: CardioPic,
               desc: "Get your heart rate pumping with high-intensity court tennis intervals combined with agility footwork training.",
-              pricing: "GHS 200 / Session",
+              pricing: "GHS 250 / Session",
               duration: "60 Mins",
               tag: "Cardio Focus"
             },
@@ -297,43 +297,47 @@ function Services() {
             {/* Monthly Pricing */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
               <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
-                Monthly Rates
+                Monthly Subscription
               </h3>
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">3x a Week</span>
+                  <span className="text-gray-600">Monthly Subscription</span>
                   <span className="font-heading font-bold text-darkslate-900">GHS 1,500</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">2x a Week</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 1,200</span>
+                  <span className="text-gray-600">Kids Monthly</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 1,000</span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">Once a Week</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 700</span>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">One-on-One Monthly</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 2,000</span>
                 </div>
               </div>
             </div>
 
-            {/* Additional Services */}
+            {/* Pay-As-You-Go & Additional Services */}
             <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
               <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
-                Additional Services
+                Pay-As-You-Go & Services
               </h3>
               <div className="space-y-4 text-sm">
                 <div className="flex justify-between items-center pb-3 border-b border-slate-100">
                   <span className="text-gray-600">Walk-In Group Session</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 200</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 250</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">One-on-One Lesson</span>
+                  <span className="text-gray-600">One-on-One with Coach</span>
                   <span className="font-heading font-bold text-darkslate-900">GHS 500</span>
+                </div>
+                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                  <span className="text-gray-600">One-on-One with Head Coach Duke</span>
+                  <span className="font-heading font-bold text-darkslate-900">GHS 1,000</span>
                 </div>
                 <div className="flex justify-between items-center pb-3 border-b border-slate-100">
                   <span className="text-gray-600">Racket Rental / Session</span>
                   <span className="font-heading font-bold text-darkslate-900">GHS 50</span>
                 </div>
-                <div className="flex justify-between items-center pt-3">
+                <div className="flex justify-between items-center pt-1">
                   <span className="text-gray-600">Event/Organization Bookings</span>
                   <span className="font-heading font-bold text-darkslate-900">From GHS 7,000</span>
                 </div>

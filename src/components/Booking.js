@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import cardioImage from "../images/people.jpg";
 import emailjs from "emailjs-com";
+import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import { isFestivalActive } from "../config/eventsConfig";
 import {
   FaCalendarAlt,
   FaCheckCircle,
@@ -10,19 +12,25 @@ import {
   FaUserAlt,
   FaEnvelope,
   FaPhoneAlt,
+  FaArrowRight,
 } from "react-icons/fa";
 
 const STATUS = { IDLE: "idle", LOADING: "loading", SUCCESS: "success", ERROR: "error" };
 
-const PACKAGES = [
-  { label: "3x Weekly – GHC 1,500 (Intensive)", value: "3x Weekly – GHC 1500 (Intensive)" },
-  { label: "2x Weekly – GHC 1,200 (Semi-Intensive)", value: "2x Weekly – GHC 1200 (Semi-Intensive)" },
-  { label: "1x Weekly – GHC 700 (Regular)", value: "1x Weekly – GHC 700 (Regular)" },
-  { label: "Walk-In Group – GHC 200/session", value: "Walk-In – GHC 200" },
-  { label: "One-on-One – GHC 500/session", value: "One-on-One – GHC 500" },
-  { label: "One-on-One with Head Coach Duke – GHC 1000/session", value: "one-on-one with Head Coach Duke – GHC 1000" },
+const FESTIVAL_PACKAGES = [
+  { label: "[DECEMBER FESTIVAL] Gold Package – GHC 4,000", value: "December Festival - Gold Package (GHC 4000)" },
+  { label: "[DECEMBER FESTIVAL] Silver Package – GHC 2,800", value: "December Festival - Silver Package (GHC 2800)" },
+  { label: "[DECEMBER FESTIVAL] Bronze Package – GHC 2,500", value: "December Festival - Bronze Package (GHC 2500)" },
+  { label: "[DECEMBER FESTIVAL] Diamond Package – GHC 1,500", value: "December Festival - Diamond Package (GHC 1500)" },
+];
+
+const STANDARD_PACKAGES = [
+  { label: "Monthly Subscription – GHC 1,500", value: "Monthly Subscription – GHC 1500" },
+  { label: "Walk-In Group – GHC 250/session", value: "Walk-In – GHC 250" },
+  { label: "One-on-One with Coach – GHC 500/session", value: "One-on-One with Coach – GHC 500" },
+  { label: "One-on-One with Head Coach Duke – GHC 1,000/session", value: "One-on-One with Head Coach Duke – GHC 1000" },
   { label: "One-on-One Monthly – GHC 2,000", value: "One-on-One Monthly – GHC 2000" },
-  { label: "Kids Lessons 2x a Week – GHC 1,000", value: "Kids Lessons 2x a Week – GHC 1000" },
+  { label: "Kids Lessons – GHC 1,000/month", value: "Kids Lessons – GHC 1000" },
   { label: "Racket Rental – GHC 50/session", value: "Racket Rental – GHC 50" },
   { label: "Event/Organization Booking – From GHC 7,000", value: "Event/Organization Booking – From GHC 7000" },
 ];
@@ -64,6 +72,11 @@ const InputField = ({ label, icon: Icon, children }) => (
 );
 
 const BookingPage = () => {
+  const festivalActive = isFestivalActive();
+  const availablePackages = festivalActive
+    ? [...FESTIVAL_PACKAGES, ...STANDARD_PACKAGES]
+    : STANDARD_PACKAGES;
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -256,7 +269,7 @@ const BookingPage = () => {
                       required
                     >
                       <option value="">Choose a package…</option>
-                      {PACKAGES.map((p) => (
+                      {availablePackages.map((p) => (
                         <option key={p.value} value={p.value}>
                           {p.label}
                         </option>
@@ -334,6 +347,30 @@ const BookingPage = () => {
 
           {/* ── Right Panel: Packages & Terms ── */}
           <div className="w-full lg:w-1/2 space-y-8">
+            {/* Festival Card (if active) */}
+            {festivalActive && (
+              <div className="bg-gradient-to-br from-darkslate-950 via-slate-900 to-darkslate-900 border-2 border-volt-400/50 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="bg-volt-400 text-darkslate-950 text-[10px] font-heading font-black uppercase px-2.5 py-1 rounded-full">
+                    Special December Event
+                  </span>
+                  <span className="text-xs text-emerald-400 font-bold">1st – 26th Dec</span>
+                </div>
+                <h4 className="text-xl font-heading font-extrabold text-white mb-1">
+                  DukeTennis Festival: The December Experience
+                </h4>
+                <p className="text-xs text-gray-300 font-sans mb-4">
+                  Tennis at Rolider + 2-Night Atlantic Bay Resort Getaway + End of Year Party. Packages from Ghc 1,500.
+                </p>
+                <Link
+                  to="/december-festival"
+                  className="inline-flex items-center gap-2 bg-volt-400 hover:bg-volt-300 text-darkslate-950 font-heading font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-xl transition shadow"
+                >
+                  View Festival & Book <FaArrowRight />
+                </Link>
+              </div>
+            )}
+
             {/* Pricing */}
             <div>
               <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
@@ -344,16 +381,16 @@ const BookingPage = () => {
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Group Monthly */}
+                {/* Monthly Subscription */}
                 <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                   <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
-                    Group Monthly
+                    Monthly Subscription
                   </h4>
                   <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
                     {[
-                      ["3x Weekly", "GHC 1,500"],
-                      ["2x Weekly", "GHC 1,200"],
-                      ["1x Weekly", "GHC 700"],
+                      ["Monthly Subscription", "GHC 1,500"],
+                      ["Kids Lessons", "GHC 1,000"],
+                      ["One-on-One Monthly", "GHC 2,000"],
                     ].map(([label, price]) => (
                       <li key={label} className="flex justify-between">
                         <span>{label}:</span>
@@ -363,17 +400,16 @@ const BookingPage = () => {
                   </ul>
                 </div>
 
-                {/* Special Training */}
+                {/* Pay-As-You-Go */}
                 <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                   <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
-                    Special Training
+                    Pay-As-You-Go
                   </h4>
                   <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
                     {[
-                      ["Walk-In Group", "GHC 200/s"],
-                      ["One-on-One with Coach", "GHC 1000/s"],
-                      ["One-on-One", "GHC 500/s"],
-                      ["Kids (2x/wk)", "GHC 1,000"],
+                      ["Walk-In Group", "GHC 250/s"],
+                      ["One-on-One with Coach", "GHC 500/s"],
+                      ["One-on-One with Head Coach Duke", "GHC 1,000/s"],
                     ].map(([label, price]) => (
                       <li key={label} className="flex justify-between">
                         <span>{label}:</span>
@@ -402,7 +438,7 @@ const BookingPage = () => {
                 </div>
               </div>
               <p className="text-xs font-bold text-gray-500 italic mt-3.5 pl-1">
-                * Court booking fees are not included in monthly package pricing.
+                Court booking fees are not included in monthly package pricing.
               </p>
             </div>
 

@@ -7,7 +7,7 @@ import coachImage from '../images/duke.jpg';
 import serviceImage1 from '../images/semi.jpg';
 import serviceImage2 from '../images/pink.jpg';
 import serviceImage3 from '../images/people.jpg';
-import { FaChevronRight } from 'react-icons/fa';
+import { FaChevronRight, FaArrowRight, FaWhatsapp } from 'react-icons/fa';
 
 function HomePage() {
   const navigate = useNavigate();
@@ -22,50 +22,89 @@ function HomePage() {
     <div className="bg-white min-h-screen pt-[73px]">
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero Section – December Festival */}
       <div className="relative h-[calc(100vh-73px)] w-full overflow-hidden">
         {/* Full-bleed background image */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroImage})` }}
         />
-        {/* Dark linear gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-darkslate-950 via-darkslate-950/80 to-darkslate-950/30" />
-        
+        {/* Layered dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-darkslate-950 via-darkslate-950/85 to-darkslate-950/40" />
+        {/* Subtle neon glow accents */}
+        <div className="absolute top-1/3 right-24 w-80 h-80 bg-volt-400/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-16 left-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+
         {/* Hero Content */}
         <div className="absolute inset-0 max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center items-start text-left z-10">
-          <span className="text-volt-400 font-heading font-extrabold text-sm uppercase tracking-widest mb-4 inline-block border-b-2 border-volt-400 pb-1">
-            Elite Tennis Coaching in Ghana
-          </span>
+
+          {/* Live event badge */}
+          <div className="inline-flex items-center gap-2.5 bg-volt-400/15 border border-volt-400/40 px-4 py-2 rounded-full mb-6">
+            <span className="w-2 h-2 rounded-full bg-volt-400 animate-ping" />
+            <span className="text-volt-300 font-heading font-extrabold text-xs uppercase tracking-widest">
+              Special December Event · 1 – 26 Dec 2026
+            </span>
+          </div>
+
+          {/* Headline */}
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-white leading-none max-w-3xl">
-            Elevate <span className="text-transparent bg-clip-text bg-gradient-to-r from-volt-300 to-emerald-400">Your Game</span> <br />
-            With Professional Coaching
+            DUKETENNIS{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-volt-300 via-volt-400 to-emerald-400">
+              FESTIVAL
+            </span>
           </h1>
-          <p className="mt-6 text-lg md:text-xl text-gray-300 max-w-xl leading-relaxed font-sans">
-            Train with DUKETENNIS, a tennis community with coaches dedicated to developing skills for players of all levels.
+          <p className="mt-3 text-xl md:text-2xl font-heading font-semibold text-emerald-300 italic">
+            — The December Experience —
           </p>
+
+          {/* Description */}
+          <p className="mt-5 text-base md:text-lg text-gray-300 max-w-xl leading-relaxed font-sans">
+            Ghana's premier tennis lifestyle event. Court sessions, a seaside resort getaway to Atlantic Bay, and an unforgettable End of Year Party — all in one package.
+          </p>
+
+          {/* Program pills */}
+          <div className="mt-6 flex flex-wrap gap-2.5">
+            {[
+              { label: '🎾 Thrice-Weekly Court Sessions', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
+              { label: '🏖️ Atlantic Bay Resort Trip', color: 'border-emerald-400/40 text-emerald-300 bg-emerald-400/10' },
+              { label: '🥂 End of Year Party', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
+            ].map((pill) => (
+              <span
+                key={pill.label}
+                className={`text-xs font-heading font-bold px-3.5 py-1.5 rounded-full border ${pill.color}`}
+              >
+                {pill.label}
+              </span>
+            ))}
+          </div>
+
+          {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <button
-              onClick={() => navigate("/booking")}
-              className="bg-volt-400 hover:bg-volt-300 text-darkslate-950 px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg glow-volt-hover"
+              onClick={() => navigate('/december-festival')}
+              className="bg-volt-400 hover:bg-volt-300 text-darkslate-950 px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg glow-volt-hover flex items-center gap-2"
             >
-              Book a Session
+              Book Festival Pass <FaArrowRight />
             </button>
-            <button
-              onClick={() => navigate("/about")}
-              className="bg-transparent hover:bg-white/10 text-white border border-white/30 hover:border-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300"
+            <a
+              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%27m%20interested%20in%20the%20DukeTennis%20Festival%20(December%20Experience)."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-transparent hover:bg-white/10 text-white border border-white/40 hover:border-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 flex items-center gap-2"
             >
-              Explore Academy
-            </button>
+              <FaWhatsapp className="text-emerald-400" /> Enquire on WhatsApp
+            </a>
           </div>
         </div>
 
-        {/* Diagonal aesthetic design accent */}
+        {/* Diagonal accent */}
         <div className="absolute bottom-0 right-0 w-1/3 h-16 bg-volt-400 transform skew-x-[-30deg] origin-bottom-right hidden lg:block opacity-75"></div>
       </div>
 
+
+
       {/* Coach Bio Section */}
-      <section className="py-24 px-6 md:px-12 bg-slate-50 text-slate-800 relative overflow-hidden">
+      <section id="coach-bio-section" className="py-24 px-6 md:px-12 bg-slate-50 text-slate-800 relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
           {/* Overlapping grid / Asymmetrical image wrapper */}
           <div className="w-full lg:w-5/12 relative group">
@@ -232,19 +271,11 @@ function HomePage() {
 
                 <div className="space-y-6 relative z-10">
                   <div>
-                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Monthly Plans</p>
+                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Monthly Subscription</p>
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">3x a Week</span>
+                        <span className="text-gray-600">Monthly Subscription</span>
                         <span className="font-bold text-darkslate-900">GHS 1,500</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">2x a Week</span>
-                        <span className="font-bold text-darkslate-900">GHS 1,200</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">1x a Week</span>
-                        <span className="font-bold text-darkslate-900">GHS 700</span>
                       </div>
                     </div>
                   </div>
@@ -254,16 +285,16 @@ function HomePage() {
                     <div className="space-y-2">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Walk-In Group</span>
-                        <span className="font-bold text-darkslate-900">GHS 200</span>
+                        <span className="font-bold text-darkslate-900">GHS 250</span>
                       </div>
                       
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One with Coach </span>
+                        <span className="text-gray-600">One-on-One with Coach</span>
                         <span className="font-bold text-darkslate-900">GHS 500</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One with Head Coach Duke </span>
-                        <span className="font-bold text-darkslate-900">GHS 1000</span>
+                        <span className="text-gray-600">One-on-One with Head Coach Duke</span>
+                        <span className="font-bold text-darkslate-900">GHS 1,000</span>
                       </div>
                     </div>
                   </div>
