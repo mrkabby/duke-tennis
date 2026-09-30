@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import cardioImage from "../images/people.jpg";
 import emailjs from "emailjs-com";
 import { Link } from "react-router-dom";
@@ -13,6 +13,7 @@ import {
   FaEnvelope,
   FaPhoneAlt,
   FaArrowRight,
+  FaWhatsapp,
 } from "react-icons/fa";
 
 const STATUS = { IDLE: "idle", LOADING: "loading", SUCCESS: "success", ERROR: "error" };
@@ -86,10 +87,42 @@ const BookingPage = () => {
     notes: "",
   });
   const [status, setStatus] = useState(STATUS.IDLE);
+  const [lastSubmitted, setLastSubmitted] = useState(null);
+  const formRef = useRef(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const generateWhatsAppUrl = () => {
+    const pkgText = formData.program || "General Tennis Program";
+    const textLines = [
+      `🎾 *New DukeTennis Booking Request*`,
+      ``,
+      `Hello Coach Duke! I would like to book a tennis session with DukeTennis.`,
+      ``,
+      `📋 *Booking Details:*`,
+      `• *Full Name:* ${formData.name.trim() || "[Not provided]"}`,
+      `• *Email:* ${formData.email.trim() || "[Not provided]"}`,
+      `• *Phone:* ${formData.phone.trim() || "[Not provided]"}`,
+      `• *Package:* ${pkgText}`,
+      `• *Preferred Start Date:* ${formData.date || "[Not specified]"}`,
+      formData.notes.trim() ? `• *Notes / Requests:* ${formData.notes.trim()}` : null,
+      ``,
+      `Looking forward to confirming my booking!`,
+    ].filter(Boolean).join("\n");
+
+    return `https://wa.me/233558315717?text=${encodeURIComponent(textLines)}`;
+  };
+
+  const handleWhatsAppSubmit = (e) => {
+    if (e) e.preventDefault();
+    if (formRef.current && !formRef.current.reportValidity()) {
+      return;
+    }
+    const url = generateWhatsAppUrl();
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleSubmit = (e) => {
@@ -115,6 +148,7 @@ const BookingPage = () => {
     emailjs
       .send(serviceID, templateID, emailParams, userID)
       .then(() => {
+        setLastSubmitted({ ...formData });
         setStatus(STATUS.SUCCESS);
         setFormData({ name: "", email: "", phone: "", program: "", date: "", notes: "" });
       })
@@ -124,7 +158,10 @@ const BookingPage = () => {
       });
   };
 
-  const resetForm = () => setStatus(STATUS.IDLE);
+  const resetForm = () => {
+    setStatus(STATUS.IDLE);
+    setLastSubmitted(null);
+  };
 
   const goToForm = () => {
     const el = document.getElementById("bookingForm");
@@ -155,13 +192,23 @@ const BookingPage = () => {
             Flexible schedules, world-class athletic facilities, and tailored
             high-performance training plans across all ages.
           </p>
-          <button
-            onClick={goToForm}
-            id="booking-hero-cta"
-            className="mt-8 bg-volt-400 hover:bg-volt-300 text-darkslate-950 font-heading font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-lg glow-volt-hover hover:scale-105"
-          >
-            Reserve Your Slot
-          </button>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button
+              onClick={goToForm}
+              id="booking-hero-cta"
+              className="w-full sm:w-auto bg-volt-400 hover:bg-volt-300 text-darkslate-950 font-heading font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-lg glow-volt-hover hover:scale-105"
+            >
+              Reserve Your Slot
+            </button>
+            <a
+              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%20have%20an%20inquiry%20about%20booking%20tennis%20lessons%20at%20DukeTennis."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white border border-white/25 font-heading font-bold text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm"
+            >
+              <FaWhatsapp className="text-emerald-400 text-base" /> Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </header>
 
@@ -194,9 +241,27 @@ const BookingPage = () => {
                     <li>Arrive 10 minutes before your session</li>
                   </ul>
                 </div>
+
+                {/* WhatsApp Quick Follow-up */}
+                <div className="mt-6 w-full max-w-sm">
+                  <a
+                    href={`https://wa.me/233558315717?text=${encodeURIComponent(
+                      `Hi Coach Duke! I just submitted a booking request via email on your website for ${
+                        lastSubmitted?.program || "tennis lessons"
+                      } (Name: ${lastSubmitted?.name || "Customer"}). Please confirm my slot!`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 px-6 rounded-full transition-all duration-300 shadow hover:shadow-lg flex items-center justify-center gap-2"
+                  >
+                    <FaWhatsapp className="text-lg" />
+                    Confirm Faster via WhatsApp
+                  </a>
+                </div>
+
                 <button
                   onClick={resetForm}
-                  className="mt-8 bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3 px-8 rounded-full transition-all duration-300"
+                  className="mt-5 bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3 px-8 rounded-full transition-all duration-300"
                 >
                   Make Another Booking
                 </button>
@@ -207,19 +272,36 @@ const BookingPage = () => {
                   <div className="w-10 h-10 rounded-xl bg-darkslate-950 flex items-center justify-center">
                     <FaCalendarAlt className="text-volt-400 w-4 h-4" />
                   </div>
-                  <h2 className="text-2xl font-heading font-extrabold text-darkslate-900">
-                    Reserve Your Spot
-                  </h2>
+                  <div>
+                    <h2 className="text-2xl font-heading font-extrabold text-darkslate-900">
+                      Reserve Your Spot
+                    </h2>
+                    <p className="text-xs text-gray-500 font-sans mt-0.5">
+                      Submit via Email or instantly through WhatsApp
+                    </p>
+                  </div>
                 </div>
 
                 {status === STATUS.ERROR && (
-                  <div className="mb-6 flex items-center gap-3 bg-red-50 border border-red-200 text-red-700 rounded-xl px-4 py-3 text-sm font-sans">
-                    <FaExclamationCircle className="flex-shrink-0" />
-                    <span>Something went wrong. Please try again or call us directly.</span>
+                  <div className="mb-6 flex flex-col gap-2.5 bg-red-50 border border-red-200 text-red-800 rounded-2xl p-4 text-sm font-sans">
+                    <div className="flex items-center gap-2 font-bold text-red-700">
+                      <FaExclamationCircle className="flex-shrink-0" />
+                      <span>Email service encountered an issue.</span>
+                    </div>
+                    <p className="text-xs text-red-600 leading-relaxed">
+                      Don't worry — your details are still preserved below. You can submit directly via WhatsApp now:
+                    </p>
+                    <button
+                      type="button"
+                      onClick={handleWhatsAppSubmit}
+                      className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-xl transition shadow mt-1"
+                    >
+                      <FaWhatsapp className="text-base" /> Send Booking via WhatsApp
+                    </button>
                   </div>
                 )}
 
-                <form className="space-y-5" onSubmit={handleSubmit}>
+                <form ref={formRef} className="space-y-5" onSubmit={handleSubmit}>
                   {/* Full Name */}
                   <InputField label="Full Name" icon={FaUserAlt}>
                     <input
@@ -302,44 +384,71 @@ const BookingPage = () => {
                     />
                   </InputField>
 
-                  {/* Submit */}
-                  <button
-                    type="submit"
-                    id="booking-submit-btn"
-                    disabled={status === STATUS.LOADING}
-                    className="w-full bg-darkslate-900 hover:bg-darkslate-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-heading font-bold text-xs uppercase tracking-widest py-4 rounded-xl transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-volt-400 mt-2 shadow-md flex items-center justify-center gap-3"
-                  >
-                    {status === STATUS.LOADING ? (
-                      <>
-                        <svg
-                          className="animate-spin h-4 w-4 text-volt-400"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                        >
-                          <circle
-                            className="opacity-25"
-                            cx="12"
-                            cy="12"
-                            r="10"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                          />
-                          <path
-                            className="opacity-75"
-                            fill="currentColor"
-                            d="M4 12a8 8 0 018-8v8z"
-                          />
-                        </svg>
-                        Processing…
-                      </>
-                    ) : (
-                      <>
-                        <FaCalendarAlt className="text-volt-400" />
-                        Confirm Booking
-                      </>
-                    )}
-                  </button>
+                  {/* Action Buttons */}
+                  <div className="pt-2 space-y-3">
+                    {/* Submit via Email */}
+                    <button
+                      type="submit"
+                      id="booking-submit-btn"
+                      disabled={status === STATUS.LOADING}
+                      className="w-full bg-darkslate-900 hover:bg-darkslate-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-heading font-bold text-xs uppercase tracking-widest py-4 rounded-xl transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-volt-400 shadow-md flex items-center justify-center gap-3 group"
+                    >
+                      {status === STATUS.LOADING ? (
+                        <>
+                          <svg
+                            className="animate-spin h-4 w-4 text-volt-400"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8v8z"
+                            />
+                          </svg>
+                          <span>Processing Email...</span>
+                        </>
+                      ) : (
+                        <>
+                          <FaEnvelope className="text-volt-400 text-sm group-hover:scale-110 transition-transform" />
+                          <span>Submit via Email</span>
+                        </>
+                      )}
+                    </button>
+
+                    {/* Divider */}
+                    <div className="relative flex items-center justify-center py-1">
+                      <div className="border-t border-slate-200 w-full" />
+                      <span className="bg-white px-3 text-[11px] font-heading font-bold text-gray-500 uppercase tracking-widest relative">
+                        or instant confirmation
+                      </span>
+                      <div className="border-t border-slate-200 w-full" />
+                    </div>
+
+                    {/* Submit via WhatsApp */}
+                    <button
+                      type="button"
+                      id="booking-whatsapp-btn"
+                      onClick={handleWhatsAppSubmit}
+                      className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-xs uppercase tracking-widest py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-600/20 focus:outline-none focus:ring-2 focus:ring-emerald-400 shadow-md flex items-center justify-center gap-3 group"
+                    >
+                      <FaWhatsapp className="text-xl text-white group-hover:scale-110 transition-transform" />
+                      <span>Book Instantly via WhatsApp</span>
+                    </button>
+
+                    <p className="text-[11px] text-gray-500 text-center font-sans">
+                      Select <strong>Email</strong> to receive email confirmation, or <strong>WhatsApp</strong> to chat directly with Coach Duke.
+                    </p>
+                  </div>
                 </form>
               </>
             )}
