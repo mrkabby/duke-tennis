@@ -331,8 +331,8 @@ function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {[
-              { id: "vyP9VHCqWBw", title: "Forehand Topspin Secrets" },
-              { id: "upARuo1IoBA", title: "Serving Power & Motion" },
+              { id: "s-DMNAeTHRE", title: "Forehfirm wrist, short motion on volleys" },
+              { id: "iNQHOoNa1Ps", title: "follow through" },
               { id: "nXiqzSp_ly0", title: "Footwork & Lateral Court Drills" },
               { id: "zaw_13yigUQ", title: "Strategic Backhand Positioning" }
             ].map((tip, idx) => (
