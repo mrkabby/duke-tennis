@@ -89,11 +89,11 @@ function Services() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "Private Lessons",
+              title: "Private Lessons (One-on-One)",
               img: TravelPic,
-              desc: "Elite one-on-one professional coaching to rapidly upgrade your technical strokes, court speed, and game strategy.",
-              pricing: "GHS 500 / Session",
-              duration: "Flexible Scheduling",
+              desc: "Scheduled around your availability. Tailored private training with walk-in sessions and flexible monthly subscription options.",
+              pricing: "From GHS 500",
+              duration: "60 / 90 Mins or Monthly",
               tag: "Best for Rapid Growth"
             },
             {
@@ -293,56 +293,113 @@ function Services() {
           </div>
 
           {/* Pricing & Add-ons */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Monthly Pricing */}
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
-              <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
-                Monthly Subscription
-              </h3>
-              <div className="space-y-4 text-sm">
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">Monthly Subscription</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 1,500</span>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* ONE ON ONE Package Card - Flyer details */}
+            <div className="bg-gradient-to-br from-darkslate-950 via-slate-900 to-darkslate-900 text-white rounded-3xl border-2 border-volt-400/80 shadow-xl p-8 relative overflow-hidden flex flex-col justify-between">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-volt-400/10 rounded-full filter blur-3xl pointer-events-none"></div>
+
+              <div>
+                <div className="flex justify-between items-center mb-3">
+                  <span className="bg-volt-400 text-darkslate-950 text-[10px] font-heading font-black uppercase px-2.5 py-1 rounded-full tracking-wider">
+                    Rate Card
+                  </span>
+                  <span className="text-volt-400 text-xs font-heading font-bold uppercase tracking-wider">
+                    Flexible Times
+                  </span>
                 </div>
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">Kids Monthly</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 1,000</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-600">One-on-One Monthly</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 2,000</span>
+                <h3 className="text-2xl font-heading font-extrabold text-white mb-2 tracking-tight">
+                  ONE ON ONE package
+                </h3>
+                <p className="text-xs text-gray-300 font-sans leading-relaxed mb-6">
+                  This is scheduled according to the time and days that works for trainee and coach.
+                </p>
+
+                <div className="space-y-5 text-sm">
+                  {/* Walk in */}
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <p className="text-xs font-bold text-volt-400 uppercase tracking-wider mb-2.5">
+                      Walk in
+                    </p>
+                    <div className="space-y-1.5 text-xs text-gray-300">
+                      <div className="flex justify-between">
+                        <span>60 minutes:</span>
+                        <span className="font-bold text-white">Ghc500</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>90 minutes:</span>
+                        <span className="font-bold text-white">Ghc750</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Monthly subscription */}
+                  <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
+                    <p className="text-xs font-bold text-volt-400 uppercase tracking-wider mb-2.5">
+                      Monthly package subscription
+                    </p>
+                    <div className="space-y-1.5 text-xs text-gray-300">
+                      <div className="flex justify-between">
+                        <span>• Once weekly</span>
+                        <span className="font-bold text-white">Ghc1900</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>• Twice weekly</span>
+                        <span className="font-bold text-white">Ghc3500</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>• Thrice weekly</span>
+                        <span className="font-bold text-white">Ghc5000</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Pay-As-You-Go & Additional Services */}
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8">
-              <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
-                Pay-As-You-Go & Services
-              </h3>
-              <div className="space-y-4 text-sm">
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">Walk-In Group Session</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 250</span>
-                </div>
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">One-on-One with Coach</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 500</span>
-                </div>
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">One-on-One with Head Coach Duke</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 1,000</span>
-                </div>
-                <div className="flex justify-between items-center pb-3 border-b border-slate-100">
-                  <span className="text-gray-600">Racket Rental / Session</span>
-                  <span className="font-heading font-bold text-darkslate-900">GHS 50</span>
-                </div>
-                <div className="flex justify-between items-center pt-1">
-                  <span className="text-gray-600">Event/Organization Bookings</span>
-                  <span className="font-heading font-bold text-darkslate-900">From GHS 7,000</span>
+            {/* Monthly Group Subscription */}
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
+                  Group Subscriptions
+                </h3>
+                <div className="space-y-4 text-sm">
+                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                    <span className="text-gray-600">Adult Group Monthly</span>
+                    <span className="font-heading font-bold text-darkslate-900">GHS 1,500</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                    <span className="text-gray-600">Kids Monthly</span>
+                    <span className="font-heading font-bold text-darkslate-900">GHS 1,000</span>
+                  </div>
                 </div>
               </div>
-              <p className="text-xs text-gray-500 italic mt-4 pt-4 border-t border-slate-100">
+              <div className="bg-slate-50 rounded-2xl p-4 mt-6 text-xs text-gray-500">
+                Regular working days and weekend group training sessions in Accra.
+              </div>
+            </div>
+
+            {/* Pay-As-You-Go & Additional Services */}
+            <div className="bg-white rounded-3xl border border-slate-100 shadow-md p-8 flex flex-col justify-between">
+              <div>
+                <h3 className="text-xl font-heading font-extrabold text-darkslate-900 mb-6">
+                  Walk-In &amp; Services
+                </h3>
+                <div className="space-y-4 text-sm">
+                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                    <span className="text-gray-600">Walk-In Group Session</span>
+                    <span className="font-heading font-bold text-darkslate-900">GHS 250</span>
+                  </div>
+                  <div className="flex justify-between items-center pb-3 border-b border-slate-100">
+                    <span className="text-gray-600">Racket Rental / Session</span>
+                    <span className="font-heading font-bold text-darkslate-900">GHS 50</span>
+                  </div>
+                  <div className="flex justify-between items-center pt-1">
+                    <span className="text-gray-600">Event/Organization Bookings</span>
+                    <span className="font-heading font-bold text-darkslate-900">From GHS 7,000</span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 italic mt-6 pt-4 border-t border-slate-100">
                 * Prices vary based on event size and requirements
               </p>
             </div>

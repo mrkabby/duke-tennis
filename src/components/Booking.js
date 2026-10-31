@@ -25,15 +25,20 @@ const FESTIVAL_PACKAGES = [
   { label: "[DECEMBER FESTIVAL] Diamond Package – GHC 1,500", value: "December Festival - Diamond Package (GHC 1500)" },
 ];
 
-const STANDARD_PACKAGES = [
-  { label: "Monthly Subscription – GHC 1,500", value: "Monthly Subscription – GHC 1500" },
-  { label: "Walk-In Group – GHC 250/session", value: "Walk-In – GHC 250" },
-  { label: "One-on-One with Coach – GHC 500/session", value: "One-on-One with Coach – GHC 500" },
-  { label: "One-on-One with Head Coach Duke – GHC 1,000/session", value: "One-on-One with Head Coach Duke – GHC 1000" },
-  { label: "One-on-One Monthly – GHC 2,000", value: "One-on-One Monthly – GHC 2000" },
-  { label: "Kids Lessons – GHC 1,000/month", value: "Kids Lessons – GHC 1000" },
-  { label: "Racket Rental – GHC 50/session", value: "Racket Rental – GHC 50" },
-  { label: "Event/Organization Booking – From GHC 7,000", value: "Event/Organization Booking – From GHC 7000" },
+const ONE_ON_ONE_PACKAGES = [
+  { label: "One-on-One Walk-in (60 mins) – Ghc 500", value: "One-on-One Walk-in 60 mins (Ghc 500)" },
+  { label: "One-on-One Walk-in (90 mins) – Ghc 750", value: "One-on-One Walk-in 90 mins (Ghc 750)" },
+  { label: "One-on-One Monthly (Once weekly) – Ghc 1,900", value: "One-on-One Monthly Once weekly (Ghc 1900)" },
+  { label: "One-on-One Monthly (Twice weekly) – Ghc 3,500", value: "One-on-One Monthly Twice weekly (Ghc 3500)" },
+  { label: "One-on-One Monthly (Thrice weekly) – Ghc 5,000", value: "One-on-One Monthly Thrice weekly (Ghc 5000)" },
+];
+
+const GROUP_OTHER_PACKAGES = [
+  { label: "Group Monthly Subscription – Ghc 1,500", value: "Group Monthly Subscription (Ghc 1500)" },
+  { label: "Walk-In Group – Ghc 250/session", value: "Walk-In Group (Ghc 250)" },
+  { label: "Kids Lessons – Ghc 1,000/month", value: "Kids Lessons (Ghc 1000)" },
+  { label: "Racket Rental – Ghc 50/session", value: "Racket Rental (Ghc 50)" },
+  { label: "Event/Organization Booking – From Ghc 7,000", value: "Event/Organization Booking (From Ghc 7000)" },
 ];
 
 const TERMS = [
@@ -74,9 +79,6 @@ const InputField = ({ label, icon: Icon, children }) => (
 
 const BookingPage = () => {
   const festivalActive = isFestivalActive();
-  const availablePackages = festivalActive
-    ? [...FESTIVAL_PACKAGES, ...STANDARD_PACKAGES]
-    : STANDARD_PACKAGES;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -351,11 +353,29 @@ const BookingPage = () => {
                       required
                     >
                       <option value="">Choose a package…</option>
-                      {availablePackages.map((p) => (
-                        <option key={p.value} value={p.value}>
-                          {p.label}
-                        </option>
-                      ))}
+                      {festivalActive && (
+                        <optgroup label="December Festival">
+                          {FESTIVAL_PACKAGES.map((p) => (
+                            <option key={p.value} value={p.value}>
+                              {p.label}
+                            </option>
+                          ))}
+                        </optgroup>
+                      )}
+                      <optgroup label="One-on-One Packages (Flexible Schedule)">
+                        {ONE_ON_ONE_PACKAGES.map((p) => (
+                          <option key={p.value} value={p.value}>
+                            {p.label}
+                          </option>
+                        ))}
+                      </optgroup>
+                      <optgroup label="Group & Other Packages">
+                        {GROUP_OTHER_PACKAGES.map((p) => (
+                          <option key={p.value} value={p.value}>
+                            {p.label}
+                          </option>
+                        ))}
+                      </optgroup>
                     </select>
                   </InputField>
 
@@ -485,21 +505,89 @@ const BookingPage = () => {
               <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
                 Academy Pricing
               </span>
-              <h3 className="text-3xl font-heading font-extrabold text-darkslate-900 mb-8">
+              <h3 className="text-3xl font-heading font-extrabold text-darkslate-900 mb-6">
                 Training Packages
               </h3>
+
+              {/* ONE ON ONE Package Card - Matches Official Flyer */}
+              <div className="bg-gradient-to-br from-darkslate-950 via-slate-900 to-darkslate-900 border-2 border-volt-400 rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden mb-6">
+                <div className="absolute top-0 right-0 w-44 h-44 bg-volt-400/10 rounded-full filter blur-3xl pointer-events-none" />
+
+                <div className="flex items-center justify-between gap-3 mb-2">
+                  <span className="bg-volt-400 text-darkslate-950 text-[11px] font-heading font-black uppercase px-3 py-1 rounded-full tracking-wider">
+                    Official Rate Card
+                  </span>
+                  <span className="text-volt-400 font-heading font-bold text-xs uppercase tracking-wider">
+                    Personalized Training
+                  </span>
+                </div>
+
+                <h4 className="text-2xl font-heading font-extrabold text-white mt-2 mb-2 tracking-tight">
+                  ONE ON ONE package
+                </h4>
+                <p className="text-xs text-gray-300 font-sans leading-relaxed mb-6">
+                  This is scheduled according to the time and days that works for trainee and coach.
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/10">
+                  {/* Walk In */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="w-2 h-2 rounded-full bg-volt-400"></span>
+                        <h5 className="font-heading font-extrabold text-white text-sm uppercase tracking-wider">
+                          Walk in
+                        </h5>
+                      </div>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between items-center text-gray-300">
+                          <span>60 minutes:</span>
+                          <span className="font-heading font-bold text-volt-400">Ghc500</span>
+                        </div>
+                        <div className="flex justify-between items-center text-gray-300">
+                          <span>90 minutes:</span>
+                          <span className="font-heading font-bold text-volt-400">Ghc750</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Monthly Package Subscription */}
+                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 backdrop-blur-sm">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+                      <h5 className="font-heading font-extrabold text-white text-sm uppercase tracking-wider">
+                        Monthly package subscription
+                      </h5>
+                    </div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between items-center text-gray-300">
+                        <span>• Once weekly</span>
+                        <span className="font-heading font-bold text-volt-400">Ghc1900</span>
+                      </div>
+                      <div className="flex justify-between items-center text-gray-300">
+                        <span>• Twice weekly</span>
+                        <span className="font-heading font-bold text-volt-400">Ghc3500</span>
+                      </div>
+                      <div className="flex justify-between items-center text-gray-300">
+                        <span>• Thrice weekly</span>
+                        <span className="font-heading font-bold text-volt-400">Ghc5000</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Monthly Subscription */}
                 <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                   <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
-                    Monthly Subscription
+                    Group Subscriptions
                   </h4>
                   <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
                     {[
                       ["Monthly Subscription", "GHC 1,500"],
                       ["Kids Lessons", "GHC 1,000"],
-                      ["One-on-One Monthly", "GHC 2,000"],
                     ].map(([label, price]) => (
                       <li key={label} className="flex justify-between">
                         <span>{label}:</span>
@@ -509,32 +597,14 @@ const BookingPage = () => {
                   </ul>
                 </div>
 
-                {/* Pay-As-You-Go */}
+                {/* Pay-As-You-Go & Add-ons */}
                 <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                   <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
-                    Pay-As-You-Go
+                    Walk-In Group &amp; Add-ons
                   </h4>
                   <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
                     {[
                       ["Walk-In Group", "GHC 250/s"],
-                      ["One-on-One with Coach", "GHC 500/s"],
-                      ["One-on-One with Head Coach Duke", "GHC 1,000/s"],
-                    ].map(([label, price]) => (
-                      <li key={label} className="flex justify-between">
-                        <span>{label}:</span>
-                        <span className="font-bold text-darkslate-900">{price}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Additional Services */}
-                <div className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
-                  <h4 className="font-heading font-extrabold text-darkslate-900 border-b border-slate-100 pb-3 mb-4">
-                    Add-ons & Equipment
-                  </h4>
-                  <ul className="space-y-3.5 text-sm text-gray-600 font-sans">
-                    {[
                       ["Racket Rental", "GHC 50/s"],
                       ["Event Bookings", "From GHC 7,000"],
                     ].map(([label, price]) => (

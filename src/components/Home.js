@@ -270,31 +270,41 @@ function HomePage() {
                 </h3>
 
                 <div className="space-y-6 relative z-10">
-                  <div>
-                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Monthly Subscription</p>
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Monthly Subscription</span>
-                        <span className="font-bold text-darkslate-900">GHS 1,500</span>
+                  {/* ONE ON ONE Package */}
+                  <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4">
+                    <div className="flex items-center justify-between mb-1">
+                      <p className="text-sm font-heading font-extrabold text-darkslate-900 uppercase tracking-wider">
+                        ONE ON ONE Package
+                      </p>
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-volt-400 text-darkslate-950 px-2 py-0.5 rounded-full">
+                        Flexible
+                      </span>
+                    </div>
+                    <p className="text-xs text-gray-500 mb-3">
+                      Scheduled to work for trainee and coach
+                    </p>
+                    <div className="space-y-2 text-xs">
+                      <div className="flex justify-between text-gray-600">
+                        <span>Walk in (60m / 90m)</span>
+                        <span className="font-bold text-darkslate-900">Ghc500 / Ghc750</span>
+                      </div>
+                      <div className="flex justify-between text-gray-600 pt-1 border-t border-slate-200">
+                        <span>Monthly (1x / 2x / 3x weekly)</span>
+                        <span className="font-bold text-darkslate-900">Ghc1900 / 3500 / 5000</span>
                       </div>
                     </div>
                   </div>
 
-                  <div className="border-t border-slate-100 pt-6">
-                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Pay-As-You-Go</p>
+                  <div>
+                    <p className="text-sm font-heading font-bold text-slate-600 uppercase tracking-wider mb-3">Group Sessions</p>
                     <div className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">Monthly Group Subscription</span>
+                        <span className="font-bold text-darkslate-900">GHS 1,500</span>
+                      </div>
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Walk-In Group</span>
                         <span className="font-bold text-darkslate-900">GHS 250</span>
-                      </div>
-                      
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One with Coach</span>
-                        <span className="font-bold text-darkslate-900">GHS 500</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">One-on-One with Head Coach Duke</span>
-                        <span className="font-bold text-darkslate-900">GHS 1,000</span>
                       </div>
                     </div>
                   </div>
