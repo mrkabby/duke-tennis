@@ -42,7 +42,7 @@ function HomePage() {
           <div className="inline-flex items-center gap-2.5 bg-volt-400/15 border border-volt-400/40 px-4 py-2 rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-volt-400 animate-ping" />
             <span className="text-volt-300 font-heading font-extrabold text-xs uppercase tracking-widest">
-              Special December Event · 1 – 26 Dec 2026
+              24th December 2026 · Starts at 5:00 PM
             </span>
           </div>
 
@@ -50,24 +50,25 @@ function HomePage() {
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-white leading-none max-w-3xl">
             DUKETENNIS{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-volt-300 via-volt-400 to-emerald-400">
-              FESTIVAL
+              FESTIVAL 2026
             </span>
           </h1>
           <p className="mt-3 text-xl md:text-2xl font-heading font-semibold text-emerald-300 italic">
-            — The December Experience —
+            — The Homecoming • The December Experience —
           </p>
 
           {/* Description */}
           <p className="mt-5 text-base md:text-lg text-gray-300 max-w-xl leading-relaxed font-sans">
-            Ghana's premier tennis lifestyle event. Court sessions, a seaside resort getaway to Atlantic Bay, and an unforgettable End of Year Party — all in one package.
+            We are pleased to announce the 2026 DUKETENNIS Festival on 24th December from 5:00 PM at Rolider Sports Complex, Ghana! Early Bird ticket: Ghc 250 (9th – 30th Nov) · Standard ticket: Ghc 500.
           </p>
 
           {/* Program pills */}
           <div className="mt-6 flex flex-wrap gap-2.5">
             {[
-              { label: '🎾 Thrice-Weekly Court Sessions', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
-              { label: '🏖️ Atlantic Bay Resort Trip', color: 'border-emerald-400/40 text-emerald-300 bg-emerald-400/10' },
-              { label: '🥂 End of Year Party', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
+              { label: '🎾 Tennis & Match Play', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
+              { label: '📍 Rolider Sports Complex', color: 'border-emerald-400/40 text-emerald-300 bg-emerald-400/10' },
+              { label: '🎟️ Early Bird: Ghc 250', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
+              { label: '⏰ 24th Dec · 5:00 PM', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
             ].map((pill) => (
               <span
                 key={pill.label}
@@ -84,10 +85,10 @@ function HomePage() {
               onClick={() => navigate('/december-festival')}
               className="bg-volt-400 hover:bg-volt-300 text-darkslate-950 px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 hover:scale-105 shadow-lg glow-volt-hover flex items-center gap-2"
             >
-              Book Festival Pass <FaArrowRight />
+              Get Festival Tickets <FaArrowRight />
             </button>
             <a
-              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%27m%20interested%20in%20the%20DukeTennis%20Festival%20(December%20Experience)."
+              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%20would%20like%20to%20get%20tickets%20for%20the%20DukeTennis%20Festival%202026%20(The%20Homecoming,%2024th%20Dec)."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent hover:bg-white/10 text-white border border-white/40 hover:border-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 flex items-center gap-2"

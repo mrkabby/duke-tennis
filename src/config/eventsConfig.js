@@ -4,137 +4,122 @@
 export const festivalConfig = {
   id: "december-festival",
   slug: "december-festival",
-  name: "DUKETENNIS FESTIVAL",
-  title: "DUKETENNIS FESTIVAL – The December Experience",
-  subtitle: "The December Experience",
-  tagline: "Tennis. Resort Getaway. Grand End-of-Year Celebration.",
-  dates: "From 1st December to 26th December 2026",
-  startDate: "2026-12-01",
-  endDate: "2026-12-26",
+  name: "DUKETENNIS FESTIVAL 2026",
+  title: "DUKETENNIS FESTIVAL 2026 – The Homecoming",
+  subtitle: "The Homecoming • The December Experience",
+  tagline: "Tennis. Music. Community. The December Experience.",
+  dates: "24th December 2026",
+  startDate: "2026-12-24",
+  endDate: "2026-12-24",
+  startTime: "5:00 PM",
+  time: "Starts at 5:00 PM",
   
   // Set to true to force active, false to force disabled/expired, or null to auto-expire based on endDate
   forceActive: null,
 
-  location: "Rolider Sports Complex & Atlantic Bay Resort, Ghana",
+  location: "Rolider Sports Complex, Accra, Ghana",
+  venue: "Rolider Sports Complex",
+
+  // Early Bird Period
+  earlyBird: {
+    startDate: "2026-11-09",
+    endDate: "2026-11-30",
+    label: "From 9th November to 30th November",
+    price: 250,
+  },
 
   // Payment & Contact Info (as specified on official festival flyer)
   momo: {
     number: "0530051334",
     name: "George Nyarkoh / DUKETENNIS",
     network: "MTN Mobile Money",
-    instructions: "Send payment with your Full Name + Festival Package as the reference, then share screenshot for instant confirmation."
+    instructions: "Send payment with your Full Name + Festival 2026 as the reference, then share screenshot for instant confirmation."
   },
   contact: {
     phone: "0558315717",
     formattedPhone: "+233 55 831 5717",
     whatsappLink: "https://wa.me/233558315717"
   },
-  
 
-  // 3 Signature Programs (Alternating in Hero)
+  // Event Highlights
   programs: [
     {
-      id: "tennis-sessions",
+      id: "tennis-showcase",
       number: "01",
-      shortTitle: "Thrice-Weekly Tennis (Rolider)",
-      title: "Thrice A Week Tennis Sessions",
+      shortTitle: "The Homecoming Tennis Showcase",
+      title: "Homecoming Tennis Showcase & Matches",
       venue: "Rolider Sports Complex",
-      dates: "Dec 1st – 26th",
-      badge: "Dec 1st – 26th",
-      tag: "Intensive Training",
+      dates: "24th December 2026",
+      badge: "Starts at 5:00 PM",
+      tag: "Feature 1 • Court Play",
       colorTheme: "volt",
-      description: "Intensive 3x weekly court sessions designed for match fitness, tactical drills, and high-energy rally games under certified PTR coaching.",
-      packageAvailability: "Included in Gold, Silver, and Bronze packages"
+      description: "High-octane court action, friendly singles and doubles exhibition matches, and high-energy rally games under the Rolider floodlights.",
+      packageAvailability: "Included in all tickets"
     },
     {
-      id: "resort-trip",
+      id: "court-games",
       number: "02",
-      shortTitle: "Atlantic Bay Resort Trip (Dec 4–6)",
-      title: "Trip To Atlantic Bay Resort",
-      venue: "Atlantic Bay Resort",
-      dates: "4th – 6th December 2026",
-      badge: "4th – 6th December",
-      tag: "Seaside Retreat",
+      shortTitle: "Fun Court Games & Skills Challenges",
+      title: "Skills Challenges & Interactive Drills",
+      venue: "Rolider Sports Complex",
+      dates: "24th December 2026",
+      badge: "All Levels Welcome",
+      tag: "Feature 2 • Challenges",
       colorTheme: "emerald",
-      description: "A weekend seaside retreat from 4th to 6th December 2026. Inclusive of breakfast, lunch, beachfront relaxation, swimming, and organized team activities.",
-      packageAvailability: "Included in Gold & Silver packages"
+      description: "Fast-paced target serving, king-of-the-court challenges, coordination drills, and exciting prize contests for beginner, intermediate, and advanced players.",
+      packageAvailability: "Included in all tickets"
     },
     {
-      id: "party",
+      id: "celebration",
       number: "03",
-      shortTitle: "End of Year Party (Dec 26)",
-      title: "End Of Year Party",
-      venue: "Duke Tennis Community",
-      dates: "26th December",
-      badge: "26th December",
-      tag: "Boxing Day Gala",
+      shortTitle: "Evening Celebration & Networking",
+      title: "December Experience Celebration & Networking",
+      venue: "Rolider Sports Complex",
+      dates: "24th December 2026",
+      badge: "Evening Vibe",
+      tag: "Feature 3 • Celebration",
       colorTheme: "amber",
-      description: "Close out the tennis year with dinner, music, recognition awards, and networking on Boxing Day with fellow players, coaches, and the tennis family.",
-      packageAvailability: "Included in Gold, Silver, and Party-Only packages"
+      description: "Celebrate the festive season with vibrant music, refreshments, end-of-year recognitions, and community networking with tennis enthusiasts.",
+      packageAvailability: "Included in all tickets"
     }
   ],
 
-  // 4 Festival Pricing Packages
+  // 2 Festival Ticket Tiers
   packages: [
     {
-      id: "gold",
-      name: "Gold Package",
-      price: 4000,
+      id: "early-bird",
+      name: "Early Bird Ticket",
+      price: 250,
       currency: "Ghc",
-      badge: "Full VIP Experience",
-      colorTheme: "amber",
+      badge: "Save Ghc 250 • Limited Time",
+      colorTheme: "volt",
       popular: true,
+      period: "From 9th November to 30th November",
       includes: [
-        "2 nights Fun trip at Atlantic Bay Resort",
-        "Includes breakfast, lunch and many fun activities",
-        "Tennis subscription for December (3X weekly)",
-        "Well organized / fun tennis activities & coaching",
-        "VIP access to End of Year party (26th Dec)"
+        "Full access to DukeTennis Festival 2026: The Homecoming",
+        "Event Date: 24th December 2026 (Starts at 5:00 PM)",
+        "Venue: Rolider Sports Complex, Accra",
+        "Court tennis sessions, games & fun challenges",
+        "Evening celebration, music, refreshments & networking",
+        "Early bird discount (Valid 9th – 30th Nov)"
       ]
     },
     {
-      id: "silver",
-      name: "Silver Package",
-      price: 2800,
+      id: "standard",
+      name: "Standard Ticket",
+      price: 500,
       currency: "Ghc",
-      badge: "Great Value",
+      badge: "Late / Regular Pass",
       colorTheme: "slate",
       popular: false,
+      period: "Standard / Late Entry",
       includes: [
-        "2 nights Fun trip at Atlantic Bay resort (Shared room)",
-        "Includes breakfast, lunch and many fun activities",
-        "Tennis subscription for December (3X weekly)",
-        "Well organized / fun tennis time & practice matches",
-        "Access to End of Year party (26th Dec)"
-      ]
-    },
-    {
-      id: "bronze",
-      name: "Bronze Package",
-      price: 2500,
-      currency: "Ghc",
-      badge: "Resort & Tennis",
-      colorTheme: "emerald",
-      popular: false,
-      includes: [
-        "2 nights Fun trip at Atlantic Bay resort (Shared room)",
-        "Includes breakfast, lunch and many fun activities",
-        "Tennis subscription for December (3X weekly)",
-        "Well organized / fun tennis time"
-      ]
-    },
-    {
-      id: "diamond",
-      name: "Diamond Package",
-      price: 1500,
-      currency: "Ghc",
-      badge: "Training & Party",
-      colorTheme: "cyan",
-      popular: false,
-      includes: [
-        "Tennis subscription for December (3X weekly)",
-        "Well organized / fun tennis time throughout December",
-        "Access to End of Year party (26th Dec)"
+        "Full access to DukeTennis Festival 2026: The Homecoming",
+        "Event Date: 24th December 2026 (Starts at 5:00 PM)",
+        "Venue: Rolider Sports Complex, Accra",
+        "Court tennis sessions, games & fun challenges",
+        "Evening celebration, music, refreshments & networking",
+        "Standard event pass"
       ]
     }
   ]
@@ -149,7 +134,6 @@ export const isFestivalActive = () => {
   if (typeof festivalConfig.forceActive === "boolean") {
     return festivalConfig.forceActive;
   }
-  // Active until the end of December 26, 2026 (or 23:59:59 local time)
   const now = new Date();
   const expiryDate = new Date(`${festivalConfig.endDate}T23:59:59`);
   return now <= expiryDate;

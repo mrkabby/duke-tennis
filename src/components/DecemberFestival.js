@@ -10,6 +10,7 @@ import semiPic from "../images/semi.jpg";
 import teamPic from "../images/team photo.jpeg";
 import coachPic from "../images/duke.jpg";
 import festivalHeroImg from "../images/girls.jpg";
+import festivalFlyerImg from "../images/festival-2026-flyer.jpg";
 import {
   FaCalendarAlt,
   FaCheckCircle,
@@ -23,6 +24,8 @@ import {
   FaCrown,
   FaMapMarkerAlt,
   FaChevronRight,
+  FaClock,
+  FaTicketAlt,
 } from "react-icons/fa";
 
 const STATUS = { IDLE: "idle", LOADING: "loading", SUCCESS: "success", ERROR: "error" };
@@ -36,7 +39,7 @@ const DecemberFestival = () => {
   const requestedPkg = queryParams.get("package");
   const initialPkg = festivalConfig.packages.some((p) => p.id === requestedPkg)
     ? requestedPkg
-    : null;
+    : "early-bird";
 
   // Package pre-selection state
   const [selectedPackage, setSelectedPackage] = useState(initialPkg);
@@ -59,11 +62,11 @@ const DecemberFestival = () => {
     }
   }, [requestedPkg]);
 
-  // Countdown timer calculation towards Dec 1st
+  // Countdown timer calculation towards Dec 24th, 2026 at 5:00 PM
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date("2026-12-01T00:00:00");
+    const targetDate = new Date("2026-12-24T17:00:00");
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -127,8 +130,8 @@ const DecemberFestival = () => {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      program: `[DECEMBER FESTIVAL] ${currentPkgDetails ? currentPkgDetails.name + " (" + currentPkgDetails.currency + " " + currentPkgDetails.price + ")" : formData.packageId}`,
-      date: "Dec 1st – 26th, 2026",
+      program: `[DECEMBER FESTIVAL 2026] ${currentPkgDetails ? currentPkgDetails.name + " (" + currentPkgDetails.currency + " " + currentPkgDetails.price + ")" : formData.packageId}`,
+      date: "24th December 2026, 5:00 PM",
       notes: formData.notes || "None specified",
     };
 
@@ -152,17 +155,17 @@ const DecemberFestival = () => {
   };
 
   const generateWhatsAppUrl = () => {
-    const pkgName = currentPkgDetails ? `${currentPkgDetails.name} (Ghc ${currentPkgDetails.price})` : "Festival Package";
-    const text = `Hi Coach Duke! I would like to book the *${pkgName}* for the *DukeTennis Festival (The December Experience)*.\n\nName: ${formData.name || "[My Name]"}\nPhone: ${formData.phone || "[My Phone]"}\nNotes: ${formData.notes || "Ready to join!"}`;
+    const pkgName = currentPkgDetails ? `${currentPkgDetails.name} (Ghc ${currentPkgDetails.price})` : "Festival Pass";
+    const text = `Hi Coach Duke! I would like to book the *${pkgName}* for the *DukeTennis Festival 2026 (The Homecoming, 24th Dec, 5pm at Rolider)*.\n\nName: ${formData.name || "[My Name]"}\nPhone: ${formData.phone || "[My Phone]"}\nNotes: ${formData.notes || "Ready to join!"}`;
     return `https://wa.me/233558315717?text=${encodeURIComponent(text)}`;
   };
 
   return (
     <div className="bg-white min-h-screen pt-[73px]">
       <SEO
-        title="DukeTennis Festival – The December Experience | Accra & Atlantic Bay Resort"
-        description="Join the DukeTennis Festival this December! Intensive tennis sessions at Rolider Sports Complex, 2-night getaway at Atlantic Bay Resort, and an unforgettable End of Year Party."
-        keywords="Duke Tennis Festival, December Experience Ghana, tennis vacation Accra, Atlantic Bay Resort tennis, Rolider Sports Complex, George Duke Nyarkoh"
+        title="DukeTennis Festival 2026 – The Homecoming | 24th December 2026"
+        description="Join the 2026 DukeTennis Festival (The Homecoming) on 24th December from 5pm at Rolider Sports Complex, Ghana! Early Bird ticket: Ghc 250, Standard ticket: Ghc 500."
+        keywords="Duke Tennis Festival 2026, The Homecoming, December Experience Ghana, Rolider Sports Complex, tennis tournament Accra, George Duke Nyarkoh"
         url="/december-festival"
       />
       <Navbar />
@@ -171,33 +174,47 @@ const DecemberFestival = () => {
       <div className="relative bg-darkslate-950 text-white py-28 px-6 overflow-hidden text-center">
         {/* Full-bleed background image with smooth zoom & opacity */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-55 scale-105 transition-transform duration-1000"
+          className="absolute inset-0 bg-cover bg-center opacity-45 scale-105 transition-transform duration-1000"
           style={{ backgroundImage: `url(${festivalHeroImg})` }}
         />
         {/* Multi-layer gradient overlays for contrast & legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-darkslate-950/70 via-darkslate-900/50 to-darkslate-950/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-darkslate-950/75 via-darkslate-900/60 to-darkslate-950/90" />
         <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-volt-400/10 rounded-full filter blur-[120px] pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <span className="text-volt-400 font-heading font-extrabold text-xs uppercase tracking-widest mb-3 inline-block">
-            Special December Experience • From 1st to 26th December
-          </span>
+          <div className="inline-flex items-center gap-2 bg-volt-400/15 border border-volt-400/40 px-4 py-1.5 rounded-full mb-4">
+            <span className="w-2 h-2 rounded-full bg-volt-400 animate-ping" />
+            <span className="text-volt-300 font-heading font-extrabold text-xs uppercase tracking-widest">
+              24th December 2026 • Starts at 5:00 PM • Ghana 🇬🇭
+            </span>
+          </div>
+
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-heading font-extrabold tracking-tight text-white mb-2">
-            DUKETENNIS <span className="text-transparent bg-clip-text bg-gradient-to-r from-volt-300 via-volt-400 to-emerald-400">FESTIVAL</span>
+            DUKETENNIS <span className="text-transparent bg-clip-text bg-gradient-to-r from-volt-300 via-volt-400 to-emerald-400">FESTIVAL 2026</span>
           </h1>
           <p className="text-emerald-300 font-heading font-semibold text-xl md:text-2xl italic mb-6">
-            — The December Experience —
+            — THE HOMECOMING • THE DECEMBER EXPERIENCE —
           </p>
-          <p className="text-gray-300 text-base md:text-lg font-sans max-w-2xl mx-auto leading-relaxed mb-8">
-            Ghana's premier tennis lifestyle event. Experience high-octane sessions at Rolider Sports Complex, a 2-night coastal getaway to Atlantic Bay Resort, and our grand End of Year Party!
+          <p className="text-gray-200 text-base md:text-lg font-sans max-w-2xl mx-auto leading-relaxed mb-8">
+            We are pleased to announce that the <strong>2026 DUKETENNIS Festival</strong> is going to be on <strong>24th December, 2026</strong>, from <strong>5:00 PM</strong> at <strong>Rolider Sports Complex</strong>, Ghana 🇬🇭, Africa. Y’all ready?
           </p>
+
+          {/* Quick Ticket Highlights Badge */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <div className="bg-volt-400 text-darkslate-950 font-heading font-extrabold text-xs uppercase tracking-wider px-4 py-2 rounded-full shadow-md flex items-center gap-1.5">
+              <FaTicketAlt /> Early Bird: Ghc 250 (9th – 30th Nov)
+            </div>
+            <div className="bg-white/10 border border-white/20 text-white font-heading font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full backdrop-blur-sm">
+              Standard Ticket: Ghc 500
+            </div>
+          </div>
 
           {/* Countdown Clock */}
           <div className="bg-white/95 border border-slate-200 rounded-2xl p-4 max-w-lg mx-auto mb-8 shadow-xl">
             <div className="text-[11px] uppercase tracking-widest font-heading font-bold text-gray-600 mb-2 flex items-center justify-between px-2">
               <span>Kickoff Countdown</span>
-              <span className="text-emerald-700 font-extrabold">Dec 1st, 2026</span>
+              <span className="text-emerald-700 font-extrabold">Dec 24th, 2026 • 5:00 PM</span>
             </div>
             <div className="grid grid-cols-4 gap-2 text-center">
               {[
@@ -227,7 +244,7 @@ const DecemberFestival = () => {
               }}
               className="bg-volt-400 hover:bg-volt-300 text-darkslate-950 font-heading font-extrabold text-xs uppercase tracking-widest py-4 px-8 rounded-full transition-all duration-300 shadow-lg glow-volt-hover hover:scale-105 flex items-center gap-2"
             >
-              Explore Packages & Book <FaChevronRight className="w-2.5 h-2.5" />
+              Get Festival Tickets <FaChevronRight className="w-2.5 h-2.5" />
             </button>
             <a
               href={generateWhatsAppUrl()}
@@ -241,17 +258,108 @@ const DecemberFestival = () => {
         </div>
       </div>
 
-      {/* ── 3 Main Programs Section (Matching Luxury Cards in Services.js) ── */}
+      {/* ── Official Flyer & Event Overview Section ── */}
+      <section className="py-20 px-6 md:px-12 bg-slate-50 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+          {/* Official Flyer Poster */}
+          <div className="w-full lg:w-5/12 flex justify-center">
+            <div className="relative group max-w-sm rounded-3xl overflow-hidden shadow-2xl border-4 border-white transition-transform duration-500 hover:scale-[1.02]">
+              <img
+                src={festivalFlyerImg}
+                alt="DukeTennis Festival 2026 - The Homecoming Official Flyer"
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute top-4 right-4 bg-darkslate-950/90 text-volt-400 font-heading font-extrabold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-slate-800">
+                Official Flyer
+              </div>
+            </div>
+          </div>
+
+          {/* Event Quick Brief */}
+          <div className="w-full lg:w-7/12 space-y-6">
+            <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest inline-block">
+              The December Experience
+            </span>
+            <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-darkslate-900 tracking-tight">
+              THE HOMECOMING IS HERE!
+            </h2>
+            <p className="text-gray-600 font-sans text-base leading-relaxed">
+              DukeTennis is bringing together all tennis players, alumni, friends, and families for an unforgettable evening under the lights on <strong>24th December 2026</strong>. From high-stakes exhibition matches and open rallies to interactive court contests and an electric evening celebration.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-volt-50 flex items-center justify-center flex-shrink-0 text-emerald-600">
+                  <FaCalendarAlt className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Date & Time</p>
+                  <p className="font-heading font-bold text-darkslate-900 text-sm">24th December 2026</p>
+                  <p className="text-xs text-gray-500">Starts at 5:00 PM</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center flex-shrink-0 text-emerald-600">
+                  <FaMapMarkerAlt className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Venue</p>
+                  <p className="font-heading font-bold text-darkslate-900 text-sm">Rolider Sports Complex</p>
+                  <p className="text-xs text-gray-500">Accra, Ghana 🇬🇭</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0 text-amber-600">
+                  <FaTicketAlt className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Early Bird Offer</p>
+                  <p className="font-heading font-bold text-darkslate-900 text-sm">Ghc 250 Only</p>
+                  <p className="text-xs text-gray-500">Valid 9th – 30th November</p>
+                </div>
+              </div>
+
+              <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-xl bg-slate-50 flex items-center justify-center flex-shrink-0 text-darkslate-900">
+                  <FaClock className="w-4 h-4" />
+                </div>
+                <div>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Late / Regular Ticket</p>
+                  <p className="font-heading font-bold text-darkslate-900 text-sm">Ghc 500</p>
+                  <p className="text-xs text-gray-500">Standard gate entry</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("packages-section");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 px-8 rounded-full transition shadow-md flex items-center gap-2"
+              >
+                <span>Reserve Your Ticket Now</span>
+                <FaChevronRight className="text-volt-400 text-xs" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3 Main Programs Section ── */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-24">
         <div className="text-center mb-16">
           <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
             Festival Highlights
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-darkslate-900 mb-4">
-            THREE SIGNATURE PROGRAMS
+            EVENT HIGHLIGHTS & ACTIVITIES
           </h2>
           <p className="text-gray-600 font-sans text-base md:text-lg max-w-2xl mx-auto">
-            A curated blend of world-class tennis training, beachfront resort leisure, and year-end celebrations.
+            A curated mix of court competition, interactive games, fun challenges, and evening celebrations.
           </p>
         </div>
 
@@ -259,30 +367,30 @@ const DecemberFestival = () => {
           {[
             {
               number: "1",
-              title: "Thrice A Week Tennis Sessions",
+              title: "Homecoming Tennis Showcase & Matches",
               img: semiPic,
-              desc: "Intensive 3x weekly court sessions designed for match fitness, tactical drills, and high-energy rally games under certified PTR coaching.",
+              desc: "High-octane court action, friendly singles and doubles exhibition matches, and high-energy rally games under the Rolider floodlights.",
               venue: "Rolider Sports Complex",
-              badge: "Dec 1st – 26th",
-              tag: "Program 1 • Training"
+              badge: "Starts at 5:00 PM",
+              tag: "Highlight 1 • Court Play"
             },
             {
               number: "2",
-              title: "Trip To Atlantic Bay Resort",
+              title: "Skills Challenges & Interactive Drills",
               img: peoplePic,
-              desc: "A weekend seaside retreat from 4th to 6th December 2026. Inclusive of breakfast, lunch, beachfront relaxation, swimming, and organized team activities.",
-              venue: "Atlantic Bay Resort",
-              badge: "4th – 6th December",
-              tag: "Program 2 • 2 Nights"
+              desc: "Fast-paced target serving, king-of-the-court challenges, coordination drills, and exciting prize contests for beginner, intermediate, and advanced players.",
+              venue: "Rolider Sports Complex",
+              badge: "All Skill Levels",
+              tag: "Highlight 2 • Challenges"
             },
             {
               number: "3",
-              title: "End Of Year Party",
+              title: "Evening Celebration & Networking",
               img: teamPic,
-              desc: "Close out the tennis year with dinner, music, recognition awards, and networking on Boxing Day with fellow players, coaches, and the tennis family.",
-              venue: "Duke Tennis Community",
-              badge: "26th December",
-              tag: "Program 3 • Celebration"
+              desc: "Celebrate the festive season with vibrant music, refreshments, end-of-year recognitions, and community networking with fellow tennis enthusiasts.",
+              venue: "Rolider Sports Complex",
+              badge: "Evening Vibe",
+              tag: "Highlight 3 • Celebration"
             }
           ].map((prog, idx) => (
             <div
@@ -333,7 +441,7 @@ const DecemberFestival = () => {
                   }}
                   className="w-full bg-slate-900 hover:bg-slate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 flex items-center justify-center space-x-1.5"
                 >
-                  <span>Select Package</span>
+                  <span>Select Ticket</span>
                   <FaChevronRight className="w-2.5 h-2.5 text-volt-400" />
                 </button>
               </div>
@@ -342,67 +450,70 @@ const DecemberFestival = () => {
         </div>
       </section>
 
-      {/* ── 4 Pricing Packages Section (Matching Services.js Schedule/Pricing) ── */}
+      {/* ── Pricing / Ticket Tiers Section ── */}
       <section id="packages-section" className="bg-slate-50 py-24 px-6 md:px-12 relative overflow-hidden border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-volt-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
-              Festival Packages & Rates
+              Festival Admission
             </span>
             <h2 className="text-4xl font-heading font-extrabold text-darkslate-900 mb-4">
-              CHOOSE YOUR DECEMBER PACKAGE
+              FESTIVAL TICKETS &amp; REGISTRATION
             </h2>
             <p className="text-gray-600 font-sans text-base md:text-lg max-w-2xl mx-auto">
-              From all-inclusive luxury resort trips to intensive tennis subscriptions, select the package that fits your December schedule.
+              Secure your spot early to take advantage of the limited-time Early Bird discount!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-12">
             {festivalConfig.packages.map((pkg) => {
               const isSelected = selectedPackage === pkg.id;
-              const isGold = pkg.id === "gold";
+              const isEarlyBird = pkg.id === "early-bird";
 
               return (
                 <div
                   key={pkg.id}
-                  className={`bg-white rounded-3xl border transition-all duration-300 shadow-md hover:shadow-xl p-7 flex flex-col justify-between relative transform hover:-translate-y-1 ${
-                    isGold
-                      ? "border-2 border-amber-400 ring-2 ring-amber-400/20"
+                  className={`bg-white rounded-3xl border transition-all duration-300 shadow-md hover:shadow-xl p-8 flex flex-col justify-between relative transform hover:-translate-y-1.5 ${
+                    isEarlyBird
+                      ? "border-2 border-volt-400 ring-4 ring-volt-400/20"
                       : isSelected
-                      ? "border-2 border-volt-400 ring-2 ring-volt-400/20"
+                      ? "border-2 border-darkslate-900 ring-2 ring-darkslate-900/10"
                       : "border-slate-100"
                   }`}
                 >
-                  {isGold && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-darkslate-950 px-4 py-1 rounded-full text-[10px] font-heading font-black uppercase tracking-widest flex items-center gap-1.5 shadow-md">
-                      <FaCrown className="text-xs" /> Full VIP Experience
+                  {isEarlyBird && (
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-volt-400 text-darkslate-950 px-4 py-1 rounded-full text-[10px] font-heading font-black uppercase tracking-widest flex items-center gap-1.5 shadow-md">
+                      <FaCrown className="text-xs" /> Limited Time • Save 50%
                     </div>
                   )}
 
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-[11px] uppercase font-heading font-bold px-3 py-1 rounded-full bg-slate-100 text-slate-700">
+                      <span className={`text-[11px] uppercase font-heading font-bold px-3 py-1 rounded-full ${isEarlyBird ? 'bg-volt-50 text-darkslate-900 border border-volt-200' : 'bg-slate-100 text-slate-700'}`}>
                         {pkg.badge}
                       </span>
+                      <span className="text-xs text-gray-500 font-bold">{pkg.period}</span>
                     </div>
 
-                    <h3 className="text-2xl font-heading font-extrabold text-darkslate-900 mb-2">
+                    <h3 className="text-3xl font-heading font-extrabold text-darkslate-900 mb-2">
                       {pkg.name}
                     </h3>
 
                     <div className="mb-6 pt-2">
                       <div className="flex items-baseline gap-1">
-                        <span className="text-sm font-bold text-emerald-600">{pkg.currency}</span>
-                        <span className="text-4xl font-heading font-extrabold text-darkslate-900">
+                        <span className="text-base font-bold text-emerald-600">{pkg.currency}</span>
+                        <span className="text-5xl font-heading font-extrabold text-darkslate-900">
                           {pkg.price.toLocaleString()}
                         </span>
                       </div>
-                      <span className="text-xs text-gray-500 font-sans">Single payment • Full December</span>
+                      <span className="text-xs text-gray-500 font-sans mt-1 block">
+                        {isEarlyBird ? "Available from 9th Nov to 30th Nov" : "Late / Standard entry ticket"}
+                      </span>
                     </div>
 
                     <div className="border-t border-slate-100 pt-5 mb-6">
-                      <p className="text-xs uppercase font-heading font-bold text-gray-500 mb-3">Package Includes:</p>
-                      <ul className="space-y-3 text-xs text-gray-600 font-sans">
+                      <p className="text-xs uppercase font-heading font-bold text-gray-500 mb-3">Ticket Includes:</p>
+                      <ul className="space-y-3 text-sm text-gray-600 font-sans">
                         {pkg.includes.map((feature, i) => (
                           <li key={i} className="flex items-start gap-2.5">
                             <FaCheckCircle className="text-emerald-500 flex-shrink-0 mt-0.5" />
@@ -415,15 +526,15 @@ const DecemberFestival = () => {
 
                   <button
                     onClick={() => handlePackageSelect(pkg.id)}
-                    className={`w-full py-3.5 rounded-full font-heading font-extrabold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 ${
-                      isGold
-                        ? "bg-amber-400 hover:bg-amber-300 text-darkslate-950 shadow-md glow-volt-hover"
+                    className={`w-full py-4 rounded-full font-heading font-extrabold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center gap-2 ${
+                      isEarlyBird
+                        ? "bg-volt-400 hover:bg-volt-300 text-darkslate-950 shadow-md glow-volt-hover"
                         : isSelected
-                        ? "bg-volt-400 text-darkslate-950 font-black shadow-md"
+                        ? "bg-darkslate-950 text-white font-black shadow-md"
                         : "bg-slate-900 hover:bg-slate-800 text-white"
                     }`}
                   >
-                    {isSelected ? "Selected ✓" : "Book This Tier"}
+                    {isSelected ? "Selected ✓" : `Book ${pkg.name}`}
                   </button>
                 </div>
               );
@@ -432,18 +543,18 @@ const DecemberFestival = () => {
         </div>
       </section>
 
-      {/* ── Booking Form & MoMo Payment Instructions (Matching Clean Form Style) ── */}
+      {/* ── Booking Form & MoMo Payment Instructions ── */}
       <section id="festival-booking-form" className="py-24 px-6 md:px-12 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
-              Registration & Payment
+              Registration &amp; Payment
             </span>
             <h2 className="text-4xl font-heading font-extrabold text-darkslate-900 mb-3">
               RESERVE YOUR FESTIVAL SPOT
             </h2>
             <p className="text-gray-600 font-sans text-base max-w-2xl mx-auto">
-              Fill in your details below and confirm via MTN Mobile Money. For instant confirmation, you can also connect directly via WhatsApp.
+              Fill in your details below and confirm via MTN Mobile Money. For instant confirmation, connect directly via WhatsApp.
             </p>
           </div>
 
@@ -462,14 +573,14 @@ const DecemberFestival = () => {
                     Booking Request Received!
                   </h3>
                   <p className="text-gray-600 text-sm max-w-md mx-auto mb-6">
-                    Thank you! We've recorded your registration for the DukeTennis Festival. Please ensure payment is transferred to the MoMo number to confirm your reservation.
+                    Thank you! We've recorded your registration for the DukeTennis Festival 2026. Please complete your payment via MTN MoMo to secure your ticket.
                   </p>
                   
                   <div className="bg-volt-50 border border-volt-200 rounded-2xl p-5 w-full max-w-md text-left mb-6 text-sm">
                     <p className="font-bold text-darkslate-900 mb-2">Next Steps:</p>
                     <ul className="list-disc list-inside space-y-1 text-gray-700">
                       <li>Send payment via MTN MoMo to <strong>0530051334</strong></li>
-                      <li>Reference: <strong>[Your Name] - Festival</strong></li>
+                      <li>Reference: <strong>[Your Name] - Festival 2026</strong></li>
                       <li>Send payment screenshot via WhatsApp to <strong>0558315717</strong></li>
                     </ul>
                   </div>
@@ -497,7 +608,7 @@ const DecemberFestival = () => {
                       <FaExclamationCircle className="text-red-500 text-base flex-shrink-0" />
                       <span>
                         {!formData.packageId
-                          ? "Please select a package before submitting."
+                          ? "Please select a ticket before submitting."
                           : "An error occurred while submitting. You can proceed directly using the WhatsApp booking button below!"}
                       </span>
                     </div>
@@ -555,7 +666,7 @@ const DecemberFestival = () => {
                   <div>
                     <label className="block text-sm font-heading font-bold text-gray-700 mb-2 flex items-center justify-between">
                       <span className="flex items-center gap-2">
-                        <FaCrown className="text-gray-400 w-3.5 h-3.5" /> Selected Package Tier
+                        <FaCrown className="text-gray-400 w-3.5 h-3.5" /> Select Ticket
                       </span>
                       {currentPkgDetails && (
                         <span className="text-emerald-700 font-extrabold text-sm">
@@ -570,7 +681,7 @@ const DecemberFestival = () => {
                       required
                       className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-volt-400 focus:border-volt-400 transition-all shadow-inner cursor-pointer"
                     >
-                      <option value="" disabled>— Select a package —</option>
+                      <option value="" disabled>— Select a ticket —</option>
                       {festivalConfig.packages.map((pkg) => (
                         <option key={pkg.id} value={pkg.id}>
                           {pkg.name} — Ghc {pkg.price.toLocaleString()} ({pkg.badge})
@@ -582,14 +693,14 @@ const DecemberFestival = () => {
                   {/* Additional Notes */}
                   <div>
                     <label className="block text-sm font-heading font-bold text-gray-700 mb-2">
-                      Special Requests / Rooming Preference (Optional)
+                      Additional Notes (Optional)
                     </label>
                     <textarea
                       name="notes"
                       rows={3}
                       value={formData.notes}
                       onChange={handleInputChange}
-                      placeholder="e.g. Dietary preferences, who you want to share a room with, tennis playing experience..."
+                      placeholder="e.g. tennis playing experience, bringing a racket, group notes..."
                       className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-volt-400 focus:border-volt-400 transition-all shadow-inner resize-none"
                     />
                   </div>
@@ -636,7 +747,7 @@ const DecemberFestival = () => {
 
                 <div className="p-8">
                   <p className="text-xs text-gray-500 mb-6 leading-relaxed font-sans">
-                    Use the details below to complete payment for your chosen package. Spots are allocated upon payment confirmation.
+                    Use the details below to complete payment for your chosen ticket. Tickets are confirmed upon payment receipt.
                   </p>
 
                   {/* MoMo Number Box */}
@@ -652,7 +763,7 @@ const DecemberFestival = () => {
                     <button
                       type="button"
                       onClick={() => copyToClipboard(festivalConfig.momo.number)}
-                      className="p-3 bg-white hover:bg-slate-100 text-darkslate-900 border border-slate-200 rounded-xl transition flex items-center gap-1.5 text-xs font-heading font-bold shadow-sm"
+                      className="p-3 bg-white hover:bg-slate-100 text-darkslate-900 border border-slate-200 rounded-xl transition flex items-center gap-1.5 text-xs font-heading font-bold shadow-sm cursor-pointer"
                       title="Copy MoMo number"
                     >
                       {copiedMoMo ? (
@@ -672,14 +783,14 @@ const DecemberFestival = () => {
                       <strong className="text-darkslate-900">Account Name:</strong> {festivalConfig.momo.name}
                     </p>
                     <p>
-                      <strong className="text-darkslate-900">Reference:</strong> [Your Name] - Festival
+                      <strong className="text-darkslate-900">Reference:</strong> [Your Name] - Festival 2026
                     </p>
                   </div>
 
                   {/* Verification Contact */}
                   <div className="border-t border-slate-100 pt-5">
                     <p className="text-xs text-gray-500 mb-2 font-sans">
-                      For inquiries & payment confirmation:
+                      For inquiries &amp; payment confirmation:
                     </p>
                     <a
                       href={`tel:${festivalConfig.contact.phone}`}
@@ -703,27 +814,13 @@ const DecemberFestival = () => {
                     Coach George Duke Nyarkoh
                   </h4>
                   <p className="text-xs text-emerald-600 font-sans font-semibold">
-                    Head Coach & Festival Organizer
+                    Head Coach &amp; Festival Organizer
                   </p>
                   <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
                     <FaMapMarkerAlt className="text-slate-400" /> Rolider Sports Complex, Ghana
                   </div>
                 </div>
               </div>
-
-              {/* Hashtags (if defined) */}
-              {festivalConfig.hashtags && festivalConfig.hashtags.length > 0 && (
-                <div className="flex flex-wrap gap-2 pt-2">
-                  {festivalConfig.hashtags.map((tag, i) => (
-                    <span
-                      key={i}
-                      className="text-[11px] font-heading font-semibold text-gray-600 bg-white border border-slate-200 px-3 py-1 rounded-full shadow-2xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              )}
 
             </div>
 

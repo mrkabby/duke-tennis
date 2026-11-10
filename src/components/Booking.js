@@ -19,10 +19,8 @@ import {
 const STATUS = { IDLE: "idle", LOADING: "loading", SUCCESS: "success", ERROR: "error" };
 
 const FESTIVAL_PACKAGES = [
-  { label: "[DECEMBER FESTIVAL] Gold Package – GHC 4,000", value: "December Festival - Gold Package (GHC 4000)" },
-  { label: "[DECEMBER FESTIVAL] Silver Package – GHC 2,800", value: "December Festival - Silver Package (GHC 2800)" },
-  { label: "[DECEMBER FESTIVAL] Bronze Package – GHC 2,500", value: "December Festival - Bronze Package (GHC 2500)" },
-  { label: "[DECEMBER FESTIVAL] Diamond Package – GHC 1,500", value: "December Festival - Diamond Package (GHC 1500)" },
+  { label: "[DEC FESTIVAL 2026] Early Bird Ticket – Ghc 250", value: "December Festival 2026 - Early Bird Ticket (Ghc 250)" },
+  { label: "[DEC FESTIVAL 2026] Standard Ticket – Ghc 500", value: "December Festival 2026 - Standard Ticket (Ghc 500)" },
 ];
 
 const ONE_ON_ONE_PACKAGES = [
@@ -481,15 +479,15 @@ const BookingPage = () => {
               <div className="bg-gradient-to-br from-darkslate-950 via-slate-900 to-darkslate-900 border-2 border-volt-400/50 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
                 <div className="flex items-center justify-between mb-3">
                   <span className="bg-volt-400 text-darkslate-950 text-[10px] font-heading font-black uppercase px-2.5 py-1 rounded-full">
-                    Special December Event
+                    24th Dec 2026 • 5:00 PM
                   </span>
-                  <span className="text-xs text-emerald-400 font-bold">1st – 26th Dec</span>
+                  <span className="text-xs text-emerald-400 font-bold">Early Bird: Ghc 250</span>
                 </div>
                 <h4 className="text-xl font-heading font-extrabold text-white mb-1">
-                  DukeTennis Festival: The December Experience
+                  DUKETENNIS Festival 2026: The Homecoming
                 </h4>
                 <p className="text-xs text-gray-300 font-sans mb-4">
-                  Tennis at Rolider + 2-Night Atlantic Bay Resort Getaway + End of Year Party. Packages from Ghc 1,500.
+                  The December Experience at Rolider Sports Complex! Tickets from Ghc 250 (Early Bird till 30th Nov) / Ghc 500 Standard.
                 </p>
                 <Link
                   to="/december-festival"
