@@ -42,7 +42,7 @@ function HomePage() {
           <div className="inline-flex items-center gap-2.5 bg-volt-400/15 border border-volt-400/40 px-4 py-2 rounded-full mb-6">
             <span className="w-2 h-2 rounded-full bg-volt-400 animate-ping" />
             <span className="text-volt-300 font-heading font-extrabold text-xs uppercase tracking-widest">
-              24th December 2026 · Starts at 5:00 PM
+              24th December 2026 · 2 Sessions in 1 Day
             </span>
           </div>
 
@@ -59,16 +59,17 @@ function HomePage() {
 
           {/* Description */}
           <p className="mt-5 text-base md:text-lg text-gray-300 max-w-xl leading-relaxed font-sans">
-            We are pleased to announce the 2026 DUKETENNIS Festival on 24th December from 5:00 PM at Rolider Sports Complex, Ghana! Early Bird ticket: Ghc 250 (9th – 30th Nov) · Standard ticket: Ghc 500.
+            Two epic sessions in one day! <strong>Session 1: The Tennis Carnival</strong> (7:00 AM – 12:00 Noon, Tennis Attire) &amp; <strong>Session 2: Party Night</strong> (8:00 PM till you drop, No Tennis Outfit) at Rolider Sports Complex, Ghana!
           </p>
 
           {/* Program pills */}
           <div className="mt-6 flex flex-wrap gap-2.5">
             {[
-              { label: '🎾 Tennis & Match Play', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
-              { label: '📍 Rolider Sports Complex', color: 'border-emerald-400/40 text-emerald-300 bg-emerald-400/10' },
-              { label: '🎟️ Early Bird: Ghc 250', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
-              { label: '⏰ 24th Dec · 5:00 PM', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
+              { label: '🎾 Session 1: Tennis Carnival (7am–12pm)', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
+              { label: '👕 Tennis Attire', color: 'border-volt-400/40 text-volt-300 bg-volt-400/10' },
+              { label: '🥂 Session 2: Party Night (8pm TYD)', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
+              { label: '✨ No Tennis Outfit', color: 'border-amber-400/40 text-amber-300 bg-amber-400/10' },
+              { label: '🎟️ Early Bird: Ghc 250', color: 'border-emerald-400/40 text-emerald-300 bg-emerald-400/10' },
             ].map((pill) => (
               <span
                 key={pill.label}
@@ -88,7 +89,7 @@ function HomePage() {
               Get Festival Tickets <FaArrowRight />
             </button>
             <a
-              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%20would%20like%20to%20get%20tickets%20for%20the%20DukeTennis%20Festival%202026%20(The%20Homecoming,%2024th%20Dec)."
+              href="https://wa.me/233558315717?text=Hi%20Coach%20Duke!%20I%20would%20like%20to%20get%20tickets%20for%20the%20DukeTennis%20Festival%202026%20(24th%20Dec:%20The%20Tennis%20Carnival%20%26%20Party%20Night)."
               target="_blank"
               rel="noopener noreferrer"
               className="bg-transparent hover:bg-white/10 text-white border border-white/40 hover:border-white px-8 py-4 rounded-full font-heading font-bold text-sm uppercase tracking-widest transition-all duration-300 flex items-center gap-2"

@@ -479,7 +479,7 @@ const BookingPage = () => {
               <div className="bg-gradient-to-br from-darkslate-950 via-slate-900 to-darkslate-900 border-2 border-volt-400/50 rounded-3xl p-6 text-white shadow-xl relative overflow-hidden">
                 <div className="flex items-center justify-between mb-3">
                   <span className="bg-volt-400 text-darkslate-950 text-[10px] font-heading font-black uppercase px-2.5 py-1 rounded-full">
-                    24th Dec 2026 • 5:00 PM
+                    24th Dec 2026 • 2 Sessions
                   </span>
                   <span className="text-xs text-emerald-400 font-bold">Early Bird: Ghc 250</span>
                 </div>
@@ -487,7 +487,7 @@ const BookingPage = () => {
                   DUKETENNIS Festival 2026: The Homecoming
                 </h4>
                 <p className="text-xs text-gray-300 font-sans mb-4">
-                  The December Experience at Rolider Sports Complex! Tickets from Ghc 250 (Early Bird till 30th Nov) / Ghc 500 Standard.
+                  Two sessions in one day: <strong>Session 1: The Tennis Carnival</strong> (7am–12pm, Tennis Attire) &amp; <strong>Session 2: Party Night</strong> (8pm TYD, No Tennis Outfit) at Rolider! Tickets from Ghc 250.
                 </p>
                 <Link
                   to="/december-festival"

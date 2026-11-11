@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import SEO from "./SEO";
 import emailjs from "emailjs-com";
 import { festivalConfig, isFestivalActive } from "../config/eventsConfig";
-import peoplePic from "../images/people.jpg";
 import semiPic from "../images/semi.jpg";
 import teamPic from "../images/team photo.jpeg";
 import coachPic from "../images/duke.jpg";
@@ -26,6 +25,8 @@ import {
   FaChevronRight,
   FaClock,
   FaTicketAlt,
+  FaTshirt,
+  FaGlassCheers,
 } from "react-icons/fa";
 
 const STATUS = { IDLE: "idle", LOADING: "loading", SUCCESS: "success", ERROR: "error" };
@@ -62,11 +63,11 @@ const DecemberFestival = () => {
     }
   }, [requestedPkg]);
 
-  // Countdown timer calculation towards Dec 24th, 2026 at 5:00 PM
+  // Countdown timer calculation towards Dec 24th, 2026 at 7:00 AM (Kickoff of Session 1)
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const targetDate = new Date("2026-12-24T17:00:00");
+    const targetDate = new Date("2026-12-24T07:00:00");
     const interval = setInterval(() => {
       const now = new Date();
       const diff = targetDate.getTime() - now.getTime();
@@ -131,7 +132,7 @@ const DecemberFestival = () => {
       email: formData.email,
       phone: formData.phone,
       program: `[DECEMBER FESTIVAL 2026] ${currentPkgDetails ? currentPkgDetails.name + " (" + currentPkgDetails.currency + " " + currentPkgDetails.price + ")" : formData.packageId}`,
-      date: "24th December 2026, 5:00 PM",
+      date: "24th December 2026 (Session 1: 7am-12pm | Session 2: 8pm TYD)",
       notes: formData.notes || "None specified",
     };
 
@@ -156,7 +157,7 @@ const DecemberFestival = () => {
 
   const generateWhatsAppUrl = () => {
     const pkgName = currentPkgDetails ? `${currentPkgDetails.name} (Ghc ${currentPkgDetails.price})` : "Festival Pass";
-    const text = `Hi Coach Duke! I would like to book the *${pkgName}* for the *DukeTennis Festival 2026 (The Homecoming, 24th Dec, 5pm at Rolider)*.\n\nName: ${formData.name || "[My Name]"}\nPhone: ${formData.phone || "[My Phone]"}\nNotes: ${formData.notes || "Ready to join!"}`;
+    const text = `Hi Coach Duke! I would like to book the *${pkgName}* for the *DukeTennis Festival 2026 (The Homecoming, 24th Dec: The Tennis Carnival & Party Night)*.\n\nName: ${formData.name || "[My Name]"}\nPhone: ${formData.phone || "[My Phone]"}\nNotes: ${formData.notes || "Ready to join!"}`;
     return `https://wa.me/233558315717?text=${encodeURIComponent(text)}`;
   };
 
@@ -164,8 +165,8 @@ const DecemberFestival = () => {
     <div className="bg-white min-h-screen pt-[73px]">
       <SEO
         title="DukeTennis Festival 2026 – The Homecoming | 24th December 2026"
-        description="Join the 2026 DukeTennis Festival (The Homecoming) on 24th December from 5pm at Rolider Sports Complex, Ghana! Early Bird ticket: Ghc 250, Standard ticket: Ghc 500."
-        keywords="Duke Tennis Festival 2026, The Homecoming, December Experience Ghana, Rolider Sports Complex, tennis tournament Accra, George Duke Nyarkoh"
+        description="Join the 2026 DukeTennis Festival (The Homecoming) on 24th December! 2 Sessions: The Tennis Carnival (7am-12pm, Tennis Attire) & Party Night (8pm TYD, No Tennis Outfit) at Rolider Sports Complex, Ghana. Early Bird: Ghc250, Standard: Ghc500."
+        keywords="Duke Tennis Festival 2026, The Homecoming, Tennis Carnival, Party Night, December Experience Ghana, Rolider Sports Complex, George Duke Nyarkoh"
         url="/december-festival"
       />
       <Navbar />
@@ -186,7 +187,7 @@ const DecemberFestival = () => {
           <div className="inline-flex items-center gap-2 bg-volt-400/15 border border-volt-400/40 px-4 py-1.5 rounded-full mb-4">
             <span className="w-2 h-2 rounded-full bg-volt-400 animate-ping" />
             <span className="text-volt-300 font-heading font-extrabold text-xs uppercase tracking-widest">
-              24th December 2026 • Starts at 5:00 PM • Ghana 🇬🇭
+              24th December 2026 • 2 Epic Sessions in 1 Day • Ghana 🇬🇭
             </span>
           </div>
 
@@ -197,24 +198,43 @@ const DecemberFestival = () => {
             — THE HOMECOMING • THE DECEMBER EXPERIENCE —
           </p>
           <p className="text-gray-200 text-base md:text-lg font-sans max-w-2xl mx-auto leading-relaxed mb-8">
-            We are pleased to announce that the <strong>2026 DUKETENNIS Festival</strong> is going to be on <strong>24th December, 2026</strong>, from <strong>5:00 PM</strong> at <strong>Rolider Sports Complex</strong>, Ghana 🇬🇭, Africa. Y’all ready?
+            We are pleased to announce that the <strong>2026 DUKETENNIS Festival</strong> is going to be on <strong>24th December, 2026</strong>, at <strong>Rolider Sports Complex</strong>, Ghana 🇬🇭, Africa. Two massive sessions in one unforgettable day! Y’all ready?
           </p>
 
-          {/* Quick Ticket Highlights Badge */}
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            <div className="bg-volt-400 text-darkslate-950 font-heading font-extrabold text-xs uppercase tracking-wider px-4 py-2 rounded-full shadow-md flex items-center gap-1.5">
-              <FaTicketAlt /> Early Bird: Ghc 250 (9th – 30th Nov)
+          {/* Quick Sessions Overview Banner in Hero */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto mb-8 text-left">
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-4 backdrop-blur-md">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-volt-400 font-heading font-extrabold text-[11px] uppercase tracking-wider">
+                  Session 1 (Day)
+                </span>
+                <span className="text-white text-xs font-mono font-bold">7am – 12 noon</span>
+              </div>
+              <p className="font-heading font-extrabold text-white text-base">The Tennis Carnival</p>
+              <p className="text-xs text-volt-300 mt-1 flex items-center gap-1.5 font-sans font-semibold">
+                <FaTshirt className="text-xs" /> Dress Code: Tennis Attire
+              </p>
             </div>
-            <div className="bg-white/10 border border-white/20 text-white font-heading font-bold text-xs uppercase tracking-wider px-4 py-2 rounded-full backdrop-blur-sm">
-              Standard Ticket: Ghc 500
+
+            <div className="bg-white/10 border border-white/20 rounded-2xl p-4 backdrop-blur-md">
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-amber-400 font-heading font-extrabold text-[11px] uppercase tracking-wider">
+                  Session 2 (Night)
+                </span>
+                <span className="text-white text-xs font-mono font-bold">8pm till you drop</span>
+              </div>
+              <p className="font-heading font-extrabold text-white text-base">Party Night</p>
+              <p className="text-xs text-amber-300 mt-1 flex items-center gap-1.5 font-sans font-semibold">
+                <FaGlassCheers className="text-xs" /> Dress Code: No Tennis Outfit
+              </p>
             </div>
           </div>
 
           {/* Countdown Clock */}
           <div className="bg-white/95 border border-slate-200 rounded-2xl p-4 max-w-lg mx-auto mb-8 shadow-xl">
             <div className="text-[11px] uppercase tracking-widest font-heading font-bold text-gray-600 mb-2 flex items-center justify-between px-2">
-              <span>Kickoff Countdown</span>
-              <span className="text-emerald-700 font-extrabold">Dec 24th, 2026 • 5:00 PM</span>
+              <span>Festival Kickoff Countdown</span>
+              <span className="text-emerald-700 font-extrabold">Dec 24th, 2026 • 7:00 AM</span>
             </div>
             <div className="grid grid-cols-4 gap-2 text-center">
               {[
@@ -281,10 +301,10 @@ const DecemberFestival = () => {
               The December Experience
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-darkslate-900 tracking-tight">
-              THE HOMECOMING IS HERE!
+              TWO SESSIONS. ONE EPIC DAY.
             </h2>
             <p className="text-gray-600 font-sans text-base leading-relaxed">
-              DukeTennis is bringing together all tennis players, alumni, friends, and families for an unforgettable evening under the lights on <strong>24th December 2026</strong>. From high-stakes exhibition matches and open rallies to interactive court contests and an electric evening celebration.
+              DukeTennis is bringing you the ultimate tennis lifestyle festival on <strong>24th December 2026</strong> at <strong>Rolider Sports Complex</strong>. We kick off in the morning with <strong>The Tennis Carnival</strong> and close out the night with an electric <strong>Party Night</strong> celebration!
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -293,9 +313,9 @@ const DecemberFestival = () => {
                   <FaCalendarAlt className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Date & Time</p>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Date</p>
                   <p className="font-heading font-bold text-darkslate-900 text-sm">24th December 2026</p>
-                  <p className="text-xs text-gray-500">Starts at 5:00 PM</p>
+                  <p className="text-xs text-gray-500">Full Day Experience</p>
                 </div>
               </div>
 
@@ -315,7 +335,7 @@ const DecemberFestival = () => {
                   <FaTicketAlt className="w-4 h-4" />
                 </div>
                 <div>
-                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Early Bird Offer</p>
+                  <p className="text-xs uppercase font-heading font-bold text-gray-400">Early Bird Ticket</p>
                   <p className="font-heading font-bold text-darkslate-900 text-sm">Ghc 250 Only</p>
                   <p className="text-xs text-gray-500">Valid 9th – 30th November</p>
                 </div>
@@ -328,7 +348,7 @@ const DecemberFestival = () => {
                 <div>
                   <p className="text-xs uppercase font-heading font-bold text-gray-400">Late / Regular Ticket</p>
                   <p className="font-heading font-bold text-darkslate-900 text-sm">Ghc 500</p>
-                  <p className="text-xs text-gray-500">Standard gate entry</p>
+                  <p className="text-xs text-gray-500">Standard entry ticket</p>
                 </div>
               </div>
             </div>
@@ -336,12 +356,12 @@ const DecemberFestival = () => {
             <div className="pt-2">
               <button
                 onClick={() => {
-                  const el = document.getElementById("packages-section");
+                  const el = document.getElementById("sessions-section");
                   if (el) el.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="bg-darkslate-900 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 px-8 rounded-full transition shadow-md flex items-center gap-2"
               >
-                <span>Reserve Your Ticket Now</span>
+                <span>View Session Details</span>
                 <FaChevronRight className="text-volt-400 text-xs" />
               </button>
             </div>
@@ -349,104 +369,170 @@ const DecemberFestival = () => {
         </div>
       </section>
 
-      {/* ── 3 Main Programs Section ── */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-24">
+      {/* ── Two Official Sessions Section ── */}
+      <section id="sessions-section" className="max-w-7xl mx-auto px-6 md:px-12 py-24">
         <div className="text-center mb-16">
           <span className="text-emerald-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
-            Festival Highlights
+            Full Event Schedule
           </span>
-          <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-darkslate-900 mb-4">
-            EVENT HIGHLIGHTS & ACTIVITIES
+          <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-darkslate-900 mb-4 tracking-tight">
+            THE TWO SESSIONS
           </h2>
-          <p className="text-gray-600 font-sans text-base md:text-lg max-w-2xl mx-auto">
-            A curated mix of court competition, interactive games, fun challenges, and evening celebrations.
+          <p className="text-gray-600 font-sans text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+            One ticket grants you access to both sessions on 24th December 2026. Note the distinct schedule and dress codes below!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              number: "1",
-              title: "Homecoming Tennis Showcase & Matches",
-              img: semiPic,
-              desc: "High-octane court action, friendly singles and doubles exhibition matches, and high-energy rally games under the Rolider floodlights.",
-              venue: "Rolider Sports Complex",
-              badge: "Starts at 5:00 PM",
-              tag: "Highlight 1 • Court Play"
-            },
-            {
-              number: "2",
-              title: "Skills Challenges & Interactive Drills",
-              img: peoplePic,
-              desc: "Fast-paced target serving, king-of-the-court challenges, coordination drills, and exciting prize contests for beginner, intermediate, and advanced players.",
-              venue: "Rolider Sports Complex",
-              badge: "All Skill Levels",
-              tag: "Highlight 2 • Challenges"
-            },
-            {
-              number: "3",
-              title: "Evening Celebration & Networking",
-              img: teamPic,
-              desc: "Celebrate the festive season with vibrant music, refreshments, end-of-year recognitions, and community networking with fellow tennis enthusiasts.",
-              venue: "Rolider Sports Complex",
-              badge: "Evening Vibe",
-              tag: "Highlight 3 • Celebration"
-            }
-          ].map((prog, idx) => (
-            <div
-              key={idx}
-              className="group bg-white rounded-3xl border border-slate-100 hover:border-volt-400 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col justify-between"
-            >
-              <div>
-                <div className="h-60 overflow-hidden relative">
-                  <img
-                    src={prog.img}
-                    alt={prog.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <span className="absolute top-4 left-4 bg-darkslate-950/90 backdrop-blur-md text-volt-400 font-heading font-extrabold text-[10px] uppercase tracking-widest px-3 py-1.5 rounded-full border border-slate-800">
-                    {prog.tag}
-                  </span>
-                  <span className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-md text-darkslate-900 font-heading font-bold text-xs px-3 py-1 rounded-full shadow">
-                    {prog.badge}
-                  </span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {/* Session 1 Card */}
+          <div className="group bg-white rounded-3xl border-2 border-slate-100 hover:border-volt-400 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between transform hover:-translate-y-2">
+            <div>
+              <div className="h-64 overflow-hidden relative">
+                <img
+                  src={semiPic}
+                  alt="The Tennis Carnival"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-darkslate-950/90 backdrop-blur-md text-volt-400 font-heading font-extrabold text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-slate-800">
+                  SESSION 1 • DAY
+                </span>
+                <span className="absolute bottom-4 right-4 bg-volt-400 text-darkslate-950 font-heading font-extrabold text-xs px-3.5 py-1 rounded-full shadow">
+                  7:00 AM – 12:00 NOON
+                </span>
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-center gap-2 text-emerald-700 font-heading font-bold text-xs uppercase tracking-wider mb-2">
+                  <FaClock className="text-sm" /> 7:00 AM to 12:00 Noon
+                </div>
+                <h3 className="text-2xl md:text-3xl font-heading font-extrabold text-darkslate-900 group-hover:text-emerald-700 transition-colors duration-300 mb-3">
+                  The Tennis Carnival
+                </h3>
+
+                {/* Dress Code Highlight */}
+                <div className="bg-volt-50 border border-volt-300 text-darkslate-950 rounded-2xl px-4 py-3 mb-5 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-volt-400 flex items-center justify-center flex-shrink-0 text-darkslate-950">
+                    <FaTshirt />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-heading font-extrabold uppercase tracking-widest block text-emerald-800">
+                      Dress Code
+                    </span>
+                    <span className="font-heading font-extrabold text-sm text-darkslate-900">
+                      Tennis Attire
+                    </span>
+                  </div>
                 </div>
 
-                <div className="p-8">
-                  <h3 className="text-2xl font-heading font-extrabold text-darkslate-900 group-hover:text-emerald-700 transition-colors duration-300 mb-3">
-                    {prog.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 leading-relaxed font-sans mb-6">
-                    {prog.desc}
-                  </p>
+                <p className="text-sm text-gray-600 leading-relaxed font-sans mb-6">
+                  High-energy court action, interactive drills, friendly singles and doubles exhibition matches, target serving challenges, and fun rally games under certified PTR coaching.
+                </p>
 
-                  <div className="space-y-3 pt-4 border-t border-slate-100 text-sm">
-                    <div className="flex items-center text-gray-700">
-                      <FaMapMarkerAlt className="text-emerald-600 mr-2.5 w-4 h-4" />
-                      <span className="font-semibold text-darkslate-900">{prog.venue}</span>
-                    </div>
-                    <div className="flex items-center text-gray-500">
-                      <FaCalendarAlt className="text-slate-400 mr-2.5 w-4 h-4" />
-                      <span>{prog.badge}</span>
-                    </div>
+                <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs text-gray-600 font-sans">
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>Friendly exhibition matches &amp; rallies</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>Skills challenges &amp; court drills for all levels</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>King of the court mini-contests &amp; prizes</span>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="px-8 pb-8 pt-2">
-                <button
-                  onClick={() => {
-                    const el = document.getElementById("packages-section");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }}
-                  className="w-full bg-slate-900 hover:bg-slate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 flex items-center justify-center space-x-1.5"
-                >
-                  <span>Select Ticket</span>
-                  <FaChevronRight className="w-2.5 h-2.5 text-volt-400" />
-                </button>
+            <div className="px-8 pb-8 pt-2">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("packages-section");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="w-full bg-darkslate-950 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 flex items-center justify-center space-x-1.5"
+              >
+                <span>Book Festival Pass</span>
+                <FaChevronRight className="w-2.5 h-2.5 text-volt-400" />
+              </button>
+            </div>
+          </div>
+
+          {/* Session 2 Card */}
+          <div className="group bg-white rounded-3xl border-2 border-slate-100 hover:border-amber-400 shadow-md hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col justify-between transform hover:-translate-y-2">
+            <div>
+              <div className="h-64 overflow-hidden relative">
+                <img
+                  src={teamPic}
+                  alt="Party Night"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-4 left-4 bg-darkslate-950/90 backdrop-blur-md text-amber-400 font-heading font-extrabold text-[10px] uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-slate-800">
+                  SESSION 2 • NIGHT
+                </span>
+                <span className="absolute bottom-4 right-4 bg-amber-400 text-darkslate-950 font-heading font-extrabold text-xs px-3.5 py-1 rounded-full shadow">
+                  8:00 PM TILL YOU DROP
+                </span>
+              </div>
+
+              <div className="p-8">
+                <div className="flex items-center gap-2 text-amber-600 font-heading font-bold text-xs uppercase tracking-wider mb-2">
+                  <FaClock className="text-sm" /> 8:00 PM till you drop (TYD)
+                </div>
+                <h3 className="text-2xl md:text-3xl font-heading font-extrabold text-darkslate-900 group-hover:text-amber-600 transition-colors duration-300 mb-3">
+                  Party Night
+                </h3>
+
+                {/* Dress Code Highlight */}
+                <div className="bg-amber-50 border border-amber-300 text-darkslate-950 rounded-2xl px-4 py-3 mb-5 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center flex-shrink-0 text-darkslate-950">
+                    <FaGlassCheers />
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-heading font-extrabold uppercase tracking-widest block text-amber-800">
+                      Dress Code
+                    </span>
+                    <span className="font-heading font-extrabold text-sm text-darkslate-900">
+                      No Tennis Outfit (Dress to Party)
+                    </span>
+                  </div>
+                </div>
+
+                <p className="text-sm text-gray-600 leading-relaxed font-sans mb-6">
+                  Switch out of your tennis kits and dress up for an unforgettable night! Great DJ music, food, drinks, end-of-year recognitions, dancing, and holiday celebration with the tennis family.
+                </p>
+
+                <div className="space-y-2.5 pt-4 border-t border-slate-100 text-xs text-gray-600 font-sans">
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>Live DJ, music &amp; entertainment</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>Food, refreshments &amp; holiday drinks</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCheckCircle className="text-emerald-500 flex-shrink-0" />
+                    <span>End-of-year awards, dancing &amp; networking</span>
+                  </div>
+                </div>
               </div>
             </div>
-          ))}
+
+            <div className="px-8 pb-8 pt-2">
+              <button
+                onClick={() => {
+                  const el = document.getElementById("packages-section");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="w-full bg-darkslate-950 hover:bg-darkslate-800 text-white font-heading font-bold text-xs uppercase tracking-widest py-3.5 rounded-full transition-all duration-300 flex items-center justify-center space-x-1.5"
+              >
+                <span>Book Festival Pass</span>
+                <FaChevronRight className="w-2.5 h-2.5 text-volt-400" />
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -455,13 +541,13 @@ const DecemberFestival = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-volt-600 font-heading font-bold text-xs uppercase tracking-widest mb-3 inline-block">
-              Festival Admission
+              All-Inclusive Festival Access
             </span>
             <h2 className="text-4xl font-heading font-extrabold text-darkslate-900 mb-4">
               FESTIVAL TICKETS &amp; REGISTRATION
             </h2>
             <p className="text-gray-600 font-sans text-base md:text-lg max-w-2xl mx-auto">
-              Secure your spot early to take advantage of the limited-time Early Bird discount!
+              Every ticket includes full admission to <strong>both Session 1 (The Tennis Carnival)</strong> and <strong>Session 2 (Party Night)</strong>!
             </p>
           </div>
 
@@ -507,7 +593,7 @@ const DecemberFestival = () => {
                         </span>
                       </div>
                       <span className="text-xs text-gray-500 font-sans mt-1 block">
-                        {isEarlyBird ? "Available from 9th Nov to 30th Nov" : "Late / Standard entry ticket"}
+                        {isEarlyBird ? "Available from 9th Nov to 30th Nov" : "Late / Standard entry pass"}
                       </span>
                     </div>
 
@@ -700,7 +786,7 @@ const DecemberFestival = () => {
                       rows={3}
                       value={formData.notes}
                       onChange={handleInputChange}
-                      placeholder="e.g. tennis playing experience, bringing a racket, group notes..."
+                      placeholder="e.g. Bringing a racket, tennis level, group notes..."
                       className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm rounded-xl p-3.5 focus:bg-white focus:outline-none focus:ring-2 focus:ring-volt-400 focus:border-volt-400 transition-all shadow-inner resize-none"
                     />
                   </div>

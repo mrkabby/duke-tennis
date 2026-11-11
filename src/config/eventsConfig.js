@@ -7,18 +7,58 @@ export const festivalConfig = {
   name: "DUKETENNIS FESTIVAL 2026",
   title: "DUKETENNIS FESTIVAL 2026 – The Homecoming",
   subtitle: "The Homecoming • The December Experience",
-  tagline: "Tennis. Music. Community. The December Experience.",
+  tagline: "Two Sessions in One Day: The Tennis Carnival & Party Night.",
   dates: "24th December 2026",
   startDate: "2026-12-24",
   endDate: "2026-12-24",
-  startTime: "5:00 PM",
-  time: "Starts at 5:00 PM",
+  startTime: "7:00 AM",
+  scheduleOverview: "Two Sessions: 7:00 AM – 12:00 PM & 8:00 PM till you drop",
   
   // Set to true to force active, false to force disabled/expired, or null to auto-expire based on endDate
   forceActive: null,
 
   location: "Rolider Sports Complex, Accra, Ghana",
   venue: "Rolider Sports Complex",
+
+  // Two Official Festival Sessions on 24th December
+  sessions: [
+    {
+      id: "session-1",
+      number: "01",
+      name: "The Tennis Carnival",
+      time: "7:00 AM – 12:00 Noon",
+      dressCode: "Tennis Attire",
+      venue: "Rolider Sports Complex",
+      tag: "Session 1 • Day Session",
+      badge: "7:00 AM – 12:00 PM",
+      colorTheme: "volt",
+      description: "High-octane court action, interactive tennis drills, friendly matches, target serving challenges, and fun rally games under certified PTR coaching.",
+      highlights: [
+        "Friendly matches & open court play",
+        "Target serving & rally challenges",
+        "King of the Court mini-tourney",
+        "Interactive drills for all skill levels"
+      ]
+    },
+    {
+      id: "session-2",
+      number: "02",
+      name: "Party Night",
+      time: "8:00 PM till you drop (TYD)",
+      dressCode: "No Tennis Outfit",
+      venue: "Rolider Sports Complex",
+      tag: "Session 2 • Night Party",
+      badge: "8:00 PM till you drop",
+      colorTheme: "amber",
+      description: "Let loose and celebrate the holidays! Vibrant DJ music, delicious food & refreshments, year-end recognitions, dancing, and networking with the tennis family.",
+      highlights: [
+        "DJ music & party entertainment",
+        "Delicious refreshments & drinks",
+        "End-of-year community awards",
+        "Networking & celebration into the night"
+      ]
+    }
+  ],
 
   // Early Bird Period
   earlyBird: {
@@ -41,50 +81,7 @@ export const festivalConfig = {
     whatsappLink: "https://wa.me/233558315717"
   },
 
-  // Event Highlights
-  programs: [
-    {
-      id: "tennis-showcase",
-      number: "01",
-      shortTitle: "The Homecoming Tennis Showcase",
-      title: "Homecoming Tennis Showcase & Matches",
-      venue: "Rolider Sports Complex",
-      dates: "24th December 2026",
-      badge: "Starts at 5:00 PM",
-      tag: "Feature 1 • Court Play",
-      colorTheme: "volt",
-      description: "High-octane court action, friendly singles and doubles exhibition matches, and high-energy rally games under the Rolider floodlights.",
-      packageAvailability: "Included in all tickets"
-    },
-    {
-      id: "court-games",
-      number: "02",
-      shortTitle: "Fun Court Games & Skills Challenges",
-      title: "Skills Challenges & Interactive Drills",
-      venue: "Rolider Sports Complex",
-      dates: "24th December 2026",
-      badge: "All Levels Welcome",
-      tag: "Feature 2 • Challenges",
-      colorTheme: "emerald",
-      description: "Fast-paced target serving, king-of-the-court challenges, coordination drills, and exciting prize contests for beginner, intermediate, and advanced players.",
-      packageAvailability: "Included in all tickets"
-    },
-    {
-      id: "celebration",
-      number: "03",
-      shortTitle: "Evening Celebration & Networking",
-      title: "December Experience Celebration & Networking",
-      venue: "Rolider Sports Complex",
-      dates: "24th December 2026",
-      badge: "Evening Vibe",
-      tag: "Feature 3 • Celebration",
-      colorTheme: "amber",
-      description: "Celebrate the festive season with vibrant music, refreshments, end-of-year recognitions, and community networking with tennis enthusiasts.",
-      packageAvailability: "Included in all tickets"
-    }
-  ],
-
-  // 2 Festival Ticket Tiers
+  // 2 Festival Ticket Tiers (both include access to both sessions)
   packages: [
     {
       id: "early-bird",
@@ -96,11 +93,12 @@ export const festivalConfig = {
       popular: true,
       period: "From 9th November to 30th November",
       includes: [
-        "Full access to DukeTennis Festival 2026: The Homecoming",
-        "Event Date: 24th December 2026 (Starts at 5:00 PM)",
-        "Venue: Rolider Sports Complex, Accra",
-        "Court tennis sessions, games & fun challenges",
-        "Evening celebration, music, refreshments & networking",
+        "Full access to BOTH Sessions on 24th December 2026",
+        "Session 1: The Tennis Carnival (7:00 AM – 12:00 Noon • Tennis Attire)",
+        "Session 2: Party Night (8:00 PM till you drop • No Tennis Outfit)",
+        "Venue: Rolider Sports Complex, Accra, Ghana",
+        "Court games, rally challenges & matches",
+        "Music, refreshments, dancing & party networking",
         "Early bird discount (Valid 9th – 30th Nov)"
       ]
     },
@@ -114,12 +112,13 @@ export const festivalConfig = {
       popular: false,
       period: "Standard / Late Entry",
       includes: [
-        "Full access to DukeTennis Festival 2026: The Homecoming",
-        "Event Date: 24th December 2026 (Starts at 5:00 PM)",
-        "Venue: Rolider Sports Complex, Accra",
-        "Court tennis sessions, games & fun challenges",
-        "Evening celebration, music, refreshments & networking",
-        "Standard event pass"
+        "Full access to BOTH Sessions on 24th December 2026",
+        "Session 1: The Tennis Carnival (7:00 AM – 12:00 Noon • Tennis Attire)",
+        "Session 2: Party Night (8:00 PM till you drop • No Tennis Outfit)",
+        "Venue: Rolider Sports Complex, Accra, Ghana",
+        "Court games, rally challenges & matches",
+        "Music, refreshments, dancing & party networking",
+        "Standard festival entry pass"
       ]
     }
   ]
